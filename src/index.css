@@ -1,7 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/lausanne');
+
+
 @import "tailwindcss";
 
 :root {
-  font-family:sans-serif, system-ui, Avenir, Helvetica, Arial, ;
+  font-family:sans-serif, system-ui, Helvetica, Arial, ;
   line-height: 1.5;
   font-weight: 400;
 
