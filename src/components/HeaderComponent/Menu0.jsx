@@ -1,11 +1,12 @@
 import React from 'react'
+import { forwardRef } from 'react'
 
-const Menu0 = () => {
+
+export const Menu0 = ((props,ref) => {
   return (
-    <div>
+    <nav ref={ref}>
       Menu0
-    </div>
+    </nav>
   )
-}
+})
 
-export default Menu0
