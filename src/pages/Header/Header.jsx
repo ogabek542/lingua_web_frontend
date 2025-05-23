@@ -1,28 +1,41 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import LinguaPhoto from "../../assets/linguaPhoto.png";
 import { FaAngleDown } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 import clsx from 'clsx';
 import { Menu0 } from "../../components/HeaderComponent/Menu0";
-import Menu1 from "../../components/HeaderComponent/Menu1";
-import Menu2 from "../../components/HeaderComponent/Menu2";
-import Menu3 from "../../components/HeaderComponent/Menu3";
+import { Menu1 } from "../../components/HeaderComponent/Menu1";
+import { Menu2 } from "../../components/HeaderComponent/Menu2";
+import { Menu3 } from "../../components/HeaderComponent/Menu3";
 
 
 const Header = () => {
+  const refs = useRef([]);
   const [hovering, setHovering] = useState(null);
   const [popoverLeft, setPopoverLeft] = useState(0);
-  const [popoverHeight, setPopoverHeight] = useState(null);
+  const [popoverHeight, setPopoverHeight] = useState(0);
 
   const handleMouseEnter = (index, event) => {
     setHovering(index);
     setPopoverLeft(event.currentTarget.offsetLeft);
+     // Wait for the DOM to render if needed
+  setTimeout(() => {
+    const menuElement = refs.current[index];
+    if (menuElement) {
+      setPopoverHeight(menuElement.offsetHeight);
+    }
+  }, 0); // Small delay ensures rendering is done
   };
 
   return (
-    <nav className="container border-1 border-red-600 flex items-center justify-between rounded-2xl px-2 py-1 bg-white/20 backdrop-blur sticky">
+    <nav className="container  flex items-center justify-between rounded-2xl px-2 py-1 bg-white/20 backdrop-blur sticky">
       {/* LEFT SIDE */}
-      <div className="flex items-center gap-[100px]">
+      <div style={{
+        left:popoverLeft || 0,
+        height:popoverHeight || 0,
+
+      }} 
+      className="flex items-center gap-[100px]">
         {/* Logo and Title */}
         <div className="flex items-center gap-2">
           <img className="w-[35px] h-[35px] object-cover" src={LinguaPhoto} alt="logo_image" />

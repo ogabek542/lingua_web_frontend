@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="container  w-full flex flex-col  bg-white overflow-hidden h-auto py-4">
       <Header />
-      <main className="flex flex-col items-center justify-center w-full h-auto">
+      <main className="flex flex-col items-center justify-center w-full h-auto min-h-screen">
         <Outlet />
       </main>
       <Footer />
