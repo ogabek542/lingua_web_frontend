@@ -32,7 +32,17 @@ const Home = () => {
         <Outlet />
         <MainSection />
       </main>
-      <Footer />
+      <footer
+        className={`  transition-all duration-300
+            ${
+              hovering !== null
+                ? "backdrop-blur-lg bg-white/50 blur-xs"
+                : "bg-transparent"
+            }
+          `}
+      >
+        <Footer />
+      </footer>
     </div>
   );
 };

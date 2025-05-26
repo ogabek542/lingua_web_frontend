@@ -85,7 +85,7 @@ const Header = ({ hovering, setHovering }) => {
                       ? "translateX(-50%)"
                       : "translateX(0)",
                 }}
-                className="absolute top-full p-2 w-auto  rounded-xl shadow-2xl transition-all duration-300 overflow-hidden z-50  bg-white backdrop-blur-sm "
+                className="absolute top-full p-2 w-auto  rounded-xl shadow-2xl transition-all duration-300 overflow-hidden z-50  bg-white backdrop-blur-sm border-[1px] border-[rgba(225,223,217,1)] "
               >
                 {/* className="absolute top-full p-2 w-auto  rounded-xl shadow-2xl transition-all duration-300 overflow-hidden z-50  bg-black/20 backdrop-blur-sm "> */}
                 <div
