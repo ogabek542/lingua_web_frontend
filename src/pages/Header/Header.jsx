@@ -28,7 +28,7 @@ const Header = ({ hovering, setHovering }) => {
 
   return (
     <div className="relative flex items-center justify-center  w-full">
-      <nav className="container flex items-center justify-between rounded-2xl px-4 py-2 bg-white/20 backdrop-blur-lg fixed top-0 left-1/2 transform -translate-x-1/2 z-50 border-b border-white/10 transition-all duration-300">
+      <nav className="container flex items-center justify-between rounded-2xl px-4 py-2 pb-3 bg-white/20 backdrop-blur-lg fixed top-0 left-1/2 transform -translate-x-1/2 z-50 border-b border-white/10 transition-all duration-300">
         {/* LEFT SIDE */}
         <div
           style={{
