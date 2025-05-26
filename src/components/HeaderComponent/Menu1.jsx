@@ -29,12 +29,12 @@ export const Menu1 = forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
-      className="h-auto w-[1535px] flex flex-col min-h-[350px]"
+      className="h-auto w-[1535px] flex flex-col min-h-[400px]"
       onMouseLeave={handleSectionMouseLeave}
     >
       <div className="flex w-full h-full">
         {/* LEFT MENU */}
-        <div className="w-1/5 bg-[#F0F0EB] min-h-[350px] flex flex-col gap-2 p-3">
+        <div className="w-1/5 bg-[#F0F0EB] min-h-[400px] flex flex-col gap-2 p-3">
           {menuScreens.map((item, idx) => (
             <a
               key={item.label}
@@ -66,16 +66,16 @@ export const Menu1 = forwardRef((props, ref) => {
           ))}
         </div>
         {/* RIGHT SCREEN */}
-        <div className="w-4/5 bg-white min-h-[350px] relative">
+        <div className="w-4/5 bg-white h-auto relative">
           <div
-            className="absolute top-0 left-0 w-full transition-all overflow-hidden"
+            className="absolute top-0 left-0 w-full transition-all overflow-hidden h-auto" 
             style={{
               height: popoverHeight,
               opacity: 1,
               zIndex: 10,
             }}
           >
-            <div ref={popoverRef} className="p-6">
+            <div ref={popoverRef} className=" h-full w-full min-h-[700px]">
               {React.createElement(menuScreens[hoveredIdx].Screen)}
             </div>
           </div>
