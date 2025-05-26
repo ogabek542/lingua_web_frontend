@@ -20,7 +20,7 @@ import { HiOutlineClipboardDocumentCheck } from "react-icons/hi2";
 
 
 
-  const CaseScreensData = [
+  const AllDocumentsScreensData = [
     {
       iconbgColor: "rgba(229,233,224,1)",
       iconColor: "rgba(147,158,130,1)",
@@ -151,4 +151,4 @@ import { HiOutlineClipboardDocumentCheck } from "react-icons/hi2";
 
   ];
 
-  export default CaseScreensData;
+  export default AllDocumentsScreensData;
