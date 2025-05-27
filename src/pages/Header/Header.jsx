@@ -8,24 +8,52 @@ import { Menu1 } from "../../components/HeaderComponent/Menu1";
 import { Menu2 } from "../../components/HeaderComponent/Menu2";
 import { Menu3 } from "../../components/HeaderComponent/Menu3";
 
+import UzbIcon from "../../assets/svg/uzbek.svg";
+import RusIcon from "../../assets/svg/russian.svg";
+import EngIcon from "../../assets/svg/british.svg";
+
+
+const LANGUAGES = [
+  { code: "uz", name: "Uzbek", icon: UzbIcon },
+  { code: "ru", name: "Русский", icon: RusIcon },
+  { code: "en", name: "English", icon: EngIcon },
+];
+
 const Header = ({ hovering, setHovering }) => {
   const refs = useRef([]);
-  // const [hovering, setHovering] = useState(null);
+  const timeoutRef = useRef();
+  const [open, setOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState(LANGUAGES[0]);
   const [popoverLeft, setPopoverLeft] = useState(0);
   const [popoverHeight, setPopoverHeight] = useState(0);
 
   const handleMouseEnter = (index, event) => {
     setHovering(index);
     setPopoverLeft(event.currentTarget.offsetLeft);
-    // Wait for the DOM to render if needed
     setTimeout(() => {
       const menuElement = refs.current[index];
       if (menuElement) {
         setPopoverHeight(menuElement.offsetHeight);
       }
-    }, 0); // Small delay ensures rendering is done
+    }, 0);
   };
 
+
+  const handleLanguageMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setOpen(true);
+  };
+
+  const handleLanguageMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpen(false), 150);
+  };
+
+  const changeLanguage = (lang) => {
+    setCurrentLanguage(lang);
+    setOpen(false);
+    // Replace this with your actual i18n logic
+    alert(`Language changed to ${lang.name}`);
+  };
   return (
     <div className="relative flex items-center justify-center  w-full">
       <nav className="container flex items-center justify-between rounded-2xl px-4 py-2 pb-3 bg-white/20 backdrop-blur-lg fixed top-0 left-1/2 transform -translate-x-1/2 z-50 border-b border-white/10 transition-all duration-300">
@@ -90,7 +118,7 @@ const Header = ({ hovering, setHovering }) => {
                 {/* className="absolute top-full p-2 w-auto  rounded-xl shadow-2xl transition-all duration-300 overflow-hidden z-50  bg-black/20 backdrop-blur-sm "> */}
                 <div
                   className={clsx(
-                    "transition-opacity duration-300",
+                    "transition-opacity duration-300 h-auto",
                     hovering === 0 ? "opacity-100" : "opacity-0 hidden"
                   )}
                 >
@@ -126,7 +154,40 @@ const Header = ({ hovering, setHovering }) => {
         </div>
 
         {/* Order Button */}
-        <div className="flex items-center">
+        <div className="flex items-center gap-1">
+            {/* language context */}
+            <div className="relative" onMouseLeave={handleLanguageMouseLeave}>
+            <button
+              onMouseEnter={handleLanguageMouseEnter}
+              className="flex items-center gap-2 px-4 py-2 rounded-full border-[1px] border-gray-300 bg-white shadow-sm hover:bg-gray-100 transition cursor-pointer"
+            >
+              <img src={currentLanguage.icon} alt={currentLanguage.name} className="w-5 h-5" />
+              <span className="font-medium text-gray-700">{currentLanguage.name}</span>
+              <FaAngleDown className="text-gray-500 transition-transform duration-300" />
+            </button>
+            {open && (
+              <div
+                className="absolute top-full left-0 mt-2 rounded-xl bg-white  shadow-xl z-50 animate-fade-in-down"
+                onMouseEnter={handleLanguageMouseEnter}
+                onMouseLeave={handleLanguageMouseLeave}
+              >
+                {LANGUAGES.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => changeLanguage(lang)}
+                    className={clsx(
+                      "flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 transition w-full text-left border-[1px] border-gray-100 cursor-pointer",
+                      currentLanguage.code === lang.code && "bg-white"
+                    )}
+                  >
+                    <img src={lang.icon} alt={lang.name} className="w-5 h-5" />
+                    <span>{lang.name}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+            {/* order button */}
           <div className="group overflow-hidden w-[120px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4 py-[9px] flex items-center gap-2">
             <span className="text-white font-medium whitespace-nowrap">
               Order Now

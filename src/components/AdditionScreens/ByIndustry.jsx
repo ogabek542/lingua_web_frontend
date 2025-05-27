@@ -8,7 +8,7 @@ import industrieScreensData from '../IndustryComponentData/IndustryScreenData';
 
 const ByIndustry = () => {
   return (
-    <div className='flex flex-col  px-3 h-full  w-full' >
+    <div className='flex flex-col  px-3 h-auto  w-full' >
         {/* top contetn */}
         <span className='text-md text-gray-500 my-2'>
             Industries
