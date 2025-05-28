@@ -148,7 +148,6 @@ const Header = ({ hovering, setHovering }) => {
                 }}
                 className="absolute top-full  w-auto  rounded-xl shadow-2xl transition-all duration-300 overflow-hidden z-50  bg-white backdrop-blur-sm border-[1px] border-[rgba(225,223,217,1)] "
               >
-                {/* className="absolute top-full p-2 w-auto  rounded-xl shadow-2xl transition-all duration-300 overflow-hidden z-50  bg-black/20 backdrop-blur-sm "> */}
                 <div
                   className={clsx(
                     "transition-opacity duration-300 h-auto",
@@ -232,7 +231,7 @@ const Header = ({ hovering, setHovering }) => {
             )}
           </div>
           {/* order button */}
-          <div className="group overflow-hidden w-[120px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4 py-[9px] flex items-center gap-2">
+          <div className="group overflow-hidden w-[120px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4   py-[9px] flex items-center gap-2">
             <span className="text-white font-medium whitespace-nowrap">
               Order Now
             </span>

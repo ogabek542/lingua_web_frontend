@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import MainSection from "../MainSection/MainSection";
 
 const Home = () => {
-  const [hovering, setHovering] = useState();
+  const [hovering, setHovering] = useState(null);
 
   useEffect(() => {
     if (hovering !== null) {

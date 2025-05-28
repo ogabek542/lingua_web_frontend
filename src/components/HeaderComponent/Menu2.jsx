@@ -6,16 +6,22 @@ import { TbCloudComputing } from "react-icons/tb";
 import { TbListSearch } from "react-icons/tb";
 import LinkCard from "../LinkCard/LinkCard";
 
-
-
-
 export const Menu2 = forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
-      className="h-auto  w-[380px] flex items-center flex-col p-1 "
+      className="
+      w-full               
+      lg:w-[380px]          
+      max-w-full           
+      p-1                   
+      flex flex-col        
+      bg-white             
+      h-auto               
+      overflow-y-auto  
+    "
     >
-        <LinkCard
+      <LinkCard
         href="#"
         title="Help Center"
         description="Answers to common questions and issues"
@@ -39,7 +45,6 @@ export const Menu2 = forwardRef((props, ref) => {
         description="Check your order status and details"
         Icon={TbListSearch}
       />
-
     </section>
   );
 });
