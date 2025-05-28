@@ -2,16 +2,20 @@ import React, { useRef, useState, useEffect } from "react";
 import LinguaPhoto from "../../assets/linguaPhoto.png";
 import { FaAngleDown } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { GoArrowRight } from "react-icons/go";
+import { MdClose } from "react-icons/md";
 import clsx from "clsx";
 import { Menu0 } from "../../components/HeaderComponent/Menu0";
 import { Menu1 } from "../../components/HeaderComponent/Menu1";
 import { Menu2 } from "../../components/HeaderComponent/Menu2";
 import { Menu3 } from "../../components/HeaderComponent/Menu3";
 
+import ModalDefaultScreen from "../ModalScreens/ModalDefaultScreen";
+
 import UzbIcon from "../../assets/svg/uzbek.svg";
 import RusIcon from "../../assets/svg/russian.svg";
 import EngIcon from "../../assets/svg/british.svg";
-
 
 const LANGUAGES = [
   { code: "uz", name: "Uzbek", icon: UzbIcon },
@@ -26,18 +30,19 @@ const Header = ({ hovering, setHovering }) => {
   const [currentLanguage, setCurrentLanguage] = useState(LANGUAGES[0]);
   const [popoverLeft, setPopoverLeft] = useState(0);
   const [popoverHeight, setPopoverHeight] = useState(0);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const handleMouseEnter = (index, event) => {
     setHovering(index);
     setPopoverLeft(event.currentTarget.offsetLeft);
+    // Wait for the DOM to render if needed
     setTimeout(() => {
       const menuElement = refs.current[index];
       if (menuElement) {
         setPopoverHeight(menuElement.offsetHeight);
       }
-    }, 0);
+    }, 0); // Small delay ensures rendering is done
   };
-
 
   const handleLanguageMouseEnter = () => {
     clearTimeout(timeoutRef.current);
@@ -66,14 +71,14 @@ const Header = ({ hovering, setHovering }) => {
           className="flex items-center gap-[100px] "
         >
           {/* Logo and Title */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 sm:gap-1">
             <img
               className="w-[35px] h-[35px] object-cover"
               src={LinguaPhoto}
               alt="logo_image"
             />
             <a href="#">
-              <p className="font-bold uppercase text-[#083473]">
+              <p className="block md:block  lg:block text-sm sm:text-xs md:text-lg font-bold uppercase text-[#083473]">
                 World Translate Service
               </p>
             </a>
@@ -82,7 +87,7 @@ const Header = ({ hovering, setHovering }) => {
           {/* Navigation Links */}
           <nav
             onMouseLeave={() => setHovering(null)}
-            className="flex items-center gap-2 relative p-2"
+            className="hidden lg:flex items-center gap-2 relative p-2"
           >
             {["Services", "Solutions", "Resources", "Company"].map(
               (item, index) => (
@@ -119,7 +124,7 @@ const Header = ({ hovering, setHovering }) => {
                 <div
                   className={clsx(
                     "transition-opacity duration-300 h-auto",
-                    hovering === 0 ? "opacity-100" : "opacity-0 hidden"
+                    hovering === 0 ? "opacity-100 " : "opacity-0 hidden"
                   )}
                 >
                   <Menu0 />
@@ -154,15 +159,29 @@ const Header = ({ hovering, setHovering }) => {
         </div>
 
         {/* Order Button */}
-        <div className="flex items-center gap-1">
-            {/* language context */}
-            <div className="relative" onMouseLeave={handleLanguageMouseLeave}>
+        {/* <GiHamburgerMenu className="text-2xl text-[#083473] block lg:hidden cursor-pointer" /> */}
+        {/* HAMBURGER ICON */}
+        <button
+          className="text-2xl text-[#083473] block lg:hidden cursor-pointer m-4"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
+          <GiHamburgerMenu className="text-2xl text-[#083473] block lg:hidden cursor-pointer" />
+        </button>
+        <div className="hidden lg:flex items-center gap-1">
+          {/* language context */}
+          <div className="relative" onMouseLeave={handleLanguageMouseLeave}>
             <button
               onMouseEnter={handleLanguageMouseEnter}
               className="flex items-center gap-2 px-4 py-2 rounded-full border-[1px] border-gray-300 bg-white shadow-sm hover:bg-gray-100 transition cursor-pointer"
             >
-              <img src={currentLanguage.icon} alt={currentLanguage.name} className="w-5 h-5" />
-              <span className="font-medium text-gray-700">{currentLanguage.name}</span>
+              <img
+                src={currentLanguage.icon}
+                alt={currentLanguage.name}
+                className="w-5 h-5"
+              />
+              <span className="font-medium text-gray-700">
+                {currentLanguage.name}
+              </span>
               <FaAngleDown className="text-gray-500 transition-transform duration-300" />
             </button>
             {open && (
@@ -187,7 +206,7 @@ const Header = ({ hovering, setHovering }) => {
               </div>
             )}
           </div>
-            {/* order button */}
+          {/* order button */}
           <div className="group overflow-hidden w-[120px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4 py-[9px] flex items-center gap-2">
             <span className="text-white font-medium whitespace-nowrap">
               Order Now
@@ -195,6 +214,60 @@ const Header = ({ hovering, setHovering }) => {
             <FaArrowRight className="text-white opacity-0 group-hover:opacity-100 -translate-x-[10px] group-hover:translate-x-0 transition-all duration-300" />
           </div>
         </div>
+        {/* <==== modal content ====> */}
+        {showMobileMenu && (
+            <div className="w-full h-full">
+              <div className="py-2 px-3 fixed inset-0 z-[9999] bg-white/50 backdrop-blur-md flex lg:hidden flex-col h-screen  ">
+                <div className="flex p-4  justify-between items-center  bg-white  border-b-[1px] border-gray-300  ">
+                  {/* Logo and title */}
+                  <div className="flex items-center gap-2">
+                    <img
+                      className="w-9 h-9 object-cover"
+                      src={LinguaPhoto}
+                      alt="Logo"
+                    />
+                    <a href="#">
+                      <p className="text-sm md:text-lg font-bold uppercase text-[#083473]">
+                        World Translate Service
+                      </p>
+                    </a>
+                  </div>
+                  {/* Close button */}
+                  <button
+                    className="text-2xl text-[#083473] hover:text-red-600 transition"
+                    onClick={() => setShowMobileMenu(false)}
+                    aria-label="Close menu"
+                  >
+                    <MdClose />
+                  </button>
+                </div>
+
+                <div className="container flex-1 flex flex-col items-start w-full gap-4 bg-white pt-4">
+                  {["Services", "Solutions", "Resources", "Company"].map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-baseline justify-between w-full cursor-pointer"
+                    >
+                      <a
+                        href="#"
+                        className="text-xl  font-medium  py-2 text-center text-gray-600   "
+                      >
+                        {item}
+                      </a>
+
+                      <GoArrowRight className="text-2xl text-gray-600" />
+                    </div>
+                  ))}
+                </div>
+
+                <div className="p-6 bg-white shadow-sm">
+                  <button className="bg-[#083473] hover:bg-[#062b5e] text-white rounded-full px-6 py-2 w-full font-semibold text-lg transition">
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+        )}
       </nav>
     </div>
   );
