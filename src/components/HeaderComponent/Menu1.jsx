@@ -13,82 +13,64 @@ const menuScreens = [
 ];
 
 export const Menu1 = forwardRef((props, ref) => {
-  const [hoveredIdx, setHoveredIdx] = useState(0); // Default to first screen
-  const popoverRef = useRef(null);
-  const [popoverHeight, setPopoverHeight] = useState(0);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const contentRef = useRef(null);
+  const [height, setHeight] = useState(0);
 
   useLayoutEffect(() => {
-    if (popoverRef.current) {
-      setPopoverHeight(popoverRef.current.scrollHeight);
+    if (contentRef.current) {
+      setHeight(contentRef.current.scrollHeight);
     }
-  }, [hoveredIdx]);
+  }, [activeIdx]);
 
-  // Reset to default (By language) when mouse leaves the menu
-  const handleSectionMouseLeave = () => setHoveredIdx(0);
+  const reset = () => setActiveIdx(0);
 
   return (
     <section
       ref={ref}
-      className="w-[1440px] flex flex-col min-h-[450px] h-auto "
-      onMouseLeave={handleSectionMouseLeave}
+      className="w-full max-w-[1440px] mx-auto flex flex-col lg:min-h-[450px]"
+      onMouseLeave={reset}
     >
-      <div className="flex w-full min-h-[450px] h-auto">
+      <div className="flex flex-col lg:flex-row w-full h-auto">
         {/* LEFT MENU */}
-        <div className="w-1/5 bg-[#F0F0EB] flex flex-col gap-2 p-3 h-auto">
+        <aside className="w-full lg:w-1/5 bg-[#F0F0EB] flex flex-col gap-2 p-4">
           {menuScreens.map((item, idx) => (
-            <a
+            <button
               key={item.label}
-              href="#"
-              onMouseEnter={() => setHoveredIdx(idx)}
+              onMouseEnter={() => setActiveIdx(idx)}
               className={`
-            group flex items-center justify-between p-2 rounded-lg
-            transition-colors duration-300 ease-in-out
-            ${
-              hoveredIdx === idx
-                ? "bg-white text-black"
-                : "hover:bg-white text-gray-600"
-            }
-          `}
+                group flex items-center justify-between p-2 rounded-lg transition-colors
+                ${activeIdx === idx ? 'bg-white text-black' : 'text-gray-600 hover:bg-white'}
+              `}
             >
               <span
                 className={`
-              text-base font-medium
-              transition-colors duration-300 ease-in-out
-              ${
-                hoveredIdx === idx
-                  ? "text-black"
-                  : "text-gray-400 group-hover:text-black"
-              }
-            `}
+                  text-base font-medium transition-colors
+                  ${activeIdx === idx ? 'text-black' : 'text-gray-400 group-hover:text-black'}
+                `}
               >
                 {item.label}
               </span>
               <GoArrowRight
                 className={`
-              text-2xl font-extrabold text-gray-400
-              transition-transform duration-300 ease-in-out
-              ${
-                hoveredIdx === idx
-                  ? "opacity-100 translate-x-1"
-                  : "opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
-              }
-            `}
+                  text-2xl transition-transform duration-300
+                  ${activeIdx === idx
+                    ? 'opacity-100 translate-x-1 text-black'
+                    : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1 text-gray-400'}
+                `}
               />
-            </a>
+            </button>
           ))}
-        </div>
+        </aside>
+
         {/* RIGHT SCREEN */}
-        <div className="w-4/5 bg-white relative h-auto">
+        <div className="w-full lg:w-4/5 bg-white relative">
           <div
-            className="absolute top-0 left-0 w-full transition-all overflow-hidden h-auto"
-            style={{
-              height: popoverHeight,
-              opacity: 1,
-              zIndex: 10,
-            }}
+            className="absolute inset-x-0 top-0 overflow-hidden transition-[height] duration-300"
+            style={{ height: height }}
           >
-            <div ref={popoverRef} className="w-full h-auto">
-              {React.createElement(menuScreens[hoveredIdx].Screen)}
+            <div ref={contentRef} className="p-4">
+              {React.createElement(menuScreens[activeIdx].Screen)}
             </div>
           </div>
         </div>

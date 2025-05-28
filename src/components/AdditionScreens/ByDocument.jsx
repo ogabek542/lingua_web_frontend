@@ -3,6 +3,7 @@ import IconContent from '../IconContent/IconContent'
 import AllDocumentsScreensData from '../IndustryComponentData/AllDocumentsData'
 
 const ByDocument = () => {
+
   return (
     <div className='flex flex-col  px-3 h-auto  w-full' >
     {/* top contetn */}
@@ -10,7 +11,7 @@ const ByDocument = () => {
         Documents
     </span>
     {/* main content */}
-    <div className="w-full grid grid-cols-1 lg:grid-cols-3 grid-rows-6 gap-1 h-auto">
+    <div className="w-full grid grid-cols-2 lg:grid-cols-3 grid-rows-6 gap-1 h-auto">
     {AllDocumentsScreensData.map((item, idx) => (
         <IconContent
         key={idx}

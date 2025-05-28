@@ -14,7 +14,7 @@ const ByIndustry = () => {
             Industries
         </span>
         {/* main content */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 grid-rows-6 gap-1 h-auto">
+        <div className="w-full grid grid-cols-2 lg:grid-cols-3 grid-rows-6 gap-1 h-auto">
         {industrieScreensData.map((item, idx) => (
             <IconContent
             key={idx}
