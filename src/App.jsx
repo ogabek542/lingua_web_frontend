@@ -13,16 +13,16 @@ function App() {
 
   return (
     <div className="w-full flex flex-col items-center justify-center overflow-hidden bg-white">
-      <Routes >
-        <Route path="/" element={<Home/>}/>
-        <Route path="/modaldefault"  element={<ModalDefaultScreen/>}>
-          <Route path="services" element={< Menu0/>} />
-          <Route path="solutions" element={< Menu1/>} />
-          <Route path="resources" element={< Menu2/>} />
-          <Route path="company" element={< Menu3/>} />
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/modaldefault/" element={<ModalDefaultScreen />}>
+        <Route path="services" element={<Menu0 />} />
+        <Route path="solutions" element={<Menu1 />} />
+        <Route path="resources" element={<Menu2 />} />
+        <Route path="company" element={<Menu3 />} />
+      </Route>
+    </Routes>
+  </div>
   )
 }
 

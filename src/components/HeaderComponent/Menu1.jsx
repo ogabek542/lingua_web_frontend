@@ -29,7 +29,7 @@ export const Menu1 = forwardRef((props, ref) => {
   return (
 <section
   ref={ref}
-  className="w-[1535px] flex flex-col min-h-[450px] h-auto"
+  className="w-[1500px] flex flex-col min-h-[450px] h-auto "
   onMouseLeave={handleSectionMouseLeave}
 >
   <div className="flex w-full min-h-[450px] h-auto">

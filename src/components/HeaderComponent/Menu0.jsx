@@ -9,7 +9,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 export const Menu0 = forwardRef((props, ref) => {
   return (
-    <nav ref={ref} className=" h-auto  w-[1535px]  flex flex-col p-2 px-3">
+    <nav ref={ref} className=" h-auto  w-[1500px]  flex flex-col p-2 px-3">
 
       <div className=" flex items-center w-full gap-[100px]">
       <div className="flex flex-col  w-2/3 p-2">

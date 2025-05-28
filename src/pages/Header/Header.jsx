@@ -3,15 +3,16 @@ import LinguaPhoto from "../../assets/linguaPhoto.png";
 import { FaAngleDown } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { GoArrowRight } from "react-icons/go";
 import { MdClose } from "react-icons/md";
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { MdArrowBack} from "react-icons/md";
+import { GoArrowRight } from "react-icons/go";
+
 import clsx from "clsx";
 import { Menu0 } from "../../components/HeaderComponent/Menu0";
 import { Menu1 } from "../../components/HeaderComponent/Menu1";
 import { Menu2 } from "../../components/HeaderComponent/Menu2";
 import { Menu3 } from "../../components/HeaderComponent/Menu3";
-
-import ModalDefaultScreen from "../ModalScreens/ModalDefaultScreen";
 
 import UzbIcon from "../../assets/svg/uzbek.svg";
 import RusIcon from "../../assets/svg/russian.svg";
@@ -23,6 +24,14 @@ const LANGUAGES = [
   { code: "en", name: "English", icon: EngIcon },
 ];
 
+// Define menuItems that was missing
+const menuItems = [
+  { name: "Services", path: "services", component: Menu0 },
+  { name: "Solutions", path: "solutions", component: Menu1 },
+  { name: "Resources", path: "resources", component: Menu2 },
+  { name: "Company", path: "company", component: Menu3 },
+];
+
 const Header = ({ hovering, setHovering }) => {
   const refs = useRef([]);
   const timeoutRef = useRef();
@@ -31,6 +40,10 @@ const Header = ({ hovering, setHovering }) => {
   const [popoverLeft, setPopoverLeft] = useState(0);
   const [popoverHeight, setPopoverHeight] = useState(0);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [selectedMenuItem, setSelectedMenuItem] = useState(null);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleMouseEnter = (index, event) => {
     setHovering(index);
@@ -59,6 +72,20 @@ const Header = ({ hovering, setHovering }) => {
     // Replace this with your actual i18n logic
     alert(`Language changed to ${lang.name}`);
   };
+
+  const handleMenuItemClick = (item) => {
+    setSelectedMenuItem(item);
+  };
+
+  const handleBackToMainMenu = () => {
+    setSelectedMenuItem(null);
+  };
+
+  const handleCloseModal = () => {
+    setShowMobileMenu(false);
+    setSelectedMenuItem(null);
+  };
+
   return (
     <div className="relative flex items-center justify-center  w-full">
       <nav className="container flex items-center justify-between rounded-2xl px-4 py-2 pb-3 bg-white/20 backdrop-blur-lg fixed top-0 left-1/2 transform -translate-x-1/2 z-50 border-b border-white/10 transition-all duration-300">
@@ -84,10 +111,11 @@ const Header = ({ hovering, setHovering }) => {
             </a>
           </div>
 
+        </div>
           {/* Navigation Links */}
-          <nav
+          <div
             onMouseLeave={() => setHovering(null)}
-            className="hidden lg:flex items-center gap-2 relative p-2"
+            className="hidden  lg:flex items-center gap-2 relative p-2 mr-[460px] w-" 
           >
             {["Services", "Solutions", "Resources", "Company"].map(
               (item, index) => (
@@ -155,11 +183,8 @@ const Header = ({ hovering, setHovering }) => {
                 </div>
               </div>
             )}
-          </nav>
-        </div>
+          </div>
 
-        {/* Order Button */}
-        {/* <GiHamburgerMenu className="text-2xl text-[#083473] block lg:hidden cursor-pointer" /> */}
         {/* HAMBURGER ICON */}
         <button
           className="text-2xl text-[#083473] block lg:hidden cursor-pointer m-4"
@@ -214,59 +239,74 @@ const Header = ({ hovering, setHovering }) => {
             <FaArrowRight className="text-white opacity-0 group-hover:opacity-100 -translate-x-[10px] group-hover:translate-x-0 transition-all duration-300" />
           </div>
         </div>
+        
         {/* <==== modal content ====> */}
         {showMobileMenu && (
-            <div className="w-full h-full">
-              <div className="py-2 px-3 fixed inset-0 z-[9999] bg-white/50 backdrop-blur-md flex lg:hidden flex-col h-screen  ">
-                <div className="flex p-4  justify-between items-center  bg-white  border-b-[1px] border-gray-300  ">
-                  {/* Logo and title */}
+          <div className="w-full h-full">
+            <div className="fixed inset-0 bg-white/50 backdrop-blur-md z-[9999] flex flex-col h-screen">
+              <div className="flex p-4 justify-between items-center bg-white border-b border-gray-300">
+                {selectedMenuItem ? (
+                  // Back navigation header
                   <div className="flex items-center gap-2">
-                    <img
-                      className="w-9 h-9 object-cover"
-                      src={LinguaPhoto}
-                      alt="Logo"
-                    />
-                    <a href="#">
-                      <p className="text-sm md:text-lg font-bold uppercase text-[#083473]">
-                        World Translate Service
-                      </p>
-                    </a>
-                  </div>
-                  {/* Close button */}
-                  <button
-                    className="text-2xl text-[#083473] hover:text-red-600 transition"
-                    onClick={() => setShowMobileMenu(false)}
-                    aria-label="Close menu"
-                  >
-                    <MdClose />
-                  </button>
-                </div>
-
-                <div className="container flex-1 flex flex-col items-start w-full gap-4 bg-white pt-4">
-                  {["Services", "Solutions", "Resources", "Company"].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-baseline justify-between w-full cursor-pointer"
+                    <button
+                      onClick={handleBackToMainMenu}
+                      className="text-2xl text-[#083473] hover:text-gray-600 transition"
                     >
-                      <a
-                        href="#"
-                        className="text-xl  font-medium  py-2 text-center text-gray-600   "
+                      <MdArrowBack />
+                    </button>
+                    <span className="text-lg font-bold text-[#083473]">
+                      {selectedMenuItem.name}
+                    </span>
+                  </div>
+                ) : (
+                  // Logo and title (default view)
+                  <div className="flex items-center gap-2">
+                    <img className="w-9 h-9" src={LinguaPhoto} alt="Logo" />
+                    <span className="text-lg font-bold uppercase text-[#083473]">
+                      World Translate Service
+                    </span>
+                  </div>
+                )}
+
+                <button
+                  className="text-2xl text-[#083473] hover:text-red-600 transition"
+                  onClick={handleCloseModal}
+                >
+                  <MdClose />
+                </button>
+              </div>
+
+              {/* Conditional rendering of menu or screen */}
+              <div className="container flex-1 overflow-y-auto bg-white pt-4">
+                {selectedMenuItem ? (
+                  // Display selected menu component
+                  <div className="p-4">
+                    {React.createElement(selectedMenuItem.component)}
+                  </div>
+                ) : (
+                  // Default menu links
+                  <div className="flex flex-col gap-4 px-4">
+                    {menuItems.map((item) => (
+                      <button
+                        key={item.path}
+                        onClick={() => handleMenuItemClick(item)}
+                        className="flex justify-between items-center text-xl font-medium text-gray-600 py-2 border-b hover:bg-gray-100 rounded transition"
                       >
-                        {item}
-                      </a>
+                        {item.name}
+                        <GoArrowRight className="text-2xl" />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-                      <GoArrowRight className="text-2xl text-gray-600" />
-                    </div>
-                  ))}
-                </div>
-
-                <div className="p-6 bg-white shadow-sm">
-                  <button className="bg-[#083473] hover:bg-[#062b5e] text-white rounded-full px-6 py-2 w-full font-semibold text-lg transition">
-                    Order Now
-                  </button>
-                </div>
+              <div className="p-6 bg-white shadow-sm">
+                <button className="bg-[#083473] hover:bg-[#062b5e] text-white rounded-full px-6 py-2 w-full font-semibold text-lg transition">
+                  Order Now
+                </button>
               </div>
             </div>
+          </div>
         )}
       </nav>
     </div>
