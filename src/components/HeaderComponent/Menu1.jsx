@@ -172,23 +172,6 @@ export const Menu1 = forwardRef(({
         </div>
       </div>
 
-      {/* Indicators */}
-      <div className="hidden lg:flex justify-center mt-2 space-x-1">
-        {menuScreens.map((_, idx) => (
-          <div
-            key={idx}
-            className={`
-              w-2 h-2 rounded-full transition-all duration-300
-              ${idx === activeIdx 
-                ? 'bg-blue-500 scale-125' 
-                : idx === defaultIndex 
-                  ? 'bg-blue-300' 
-                  : 'bg-gray-300'
-              }
-            `}
-          />
-        ))}
-      </div>
     </section>
   );
 });

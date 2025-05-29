@@ -1,10 +1,11 @@
 import React from 'react'
 
 const Footer = () => {
+
   return (
-    <div className='border-2 border-green-700'>
+    <footer className=" flex items-center justify-center w-screen bg-[rgba(18,18,18,1)]">
       Footer 
-    </div>
+    </footer>
   )
 }
 
