@@ -16,7 +16,7 @@ const Home = () => {
   }, [hovering]);
 
   return (
-    <div className="  w-screen flex flex-col  bg-white overflow-hidden h-auto py-4">
+    <div className="  w-screen flex flex-col  bg-white overflow-hidden h-auto py-4 pb-0">
       <Header hovering={hovering} setHovering={setHovering} />
 
       {/* <main className="flex flex-col items-center justify-center w-full h-auto min-h-screen "> */}
