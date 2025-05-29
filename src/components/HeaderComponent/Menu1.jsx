@@ -120,7 +120,6 @@ export const Menu1 = forwardRef(({
                     ? 'bg-white text-black shadow-sm' 
                     : 'text-gray-600 hover:bg-white hover:shadow-sm'
                   }
-                  ${isDefault && !isActive ? 'border-l-2 border-blue-400' : ''}
                 `}
                 aria-label={`${item.label} ${isDefault ? '(default)' : ''}`}
                 aria-pressed={isActive}
@@ -136,9 +135,7 @@ export const Menu1 = forwardRef(({
                   `}
                 >
                   {item.label}
-                  {isDefault && (
-                    <span className="ml-1 text-xs text-blue-500 opacity-70">●</span>
-                  )}
+                  
                 </span>
                 <GoArrowRight
                   className={`
