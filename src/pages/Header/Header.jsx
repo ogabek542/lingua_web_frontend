@@ -27,7 +27,7 @@ const LANGUAGES = [
 // Define menuItems that was missing
 const menuItems = [
   { name: "Services", path: "services", component: Menu0 },
-  { name: "Solutions", path: "solutions", component: Menu1 },
+  { name: "Solutions", path: "solutions", component: Menu1 }, // This will show "By language" by default
   { name: "Resources", path: "resources", component: Menu2 },
   { name: "Company", path: "company", component: Menu3 },
 ];
@@ -87,7 +87,7 @@ const Header = ({ hovering, setHovering }) => {
   };
 
   return (
-    <div className="relative flex items-center justify-center  w-full">
+    <div className="relative flex items-center justify-center w-full">
       <nav className="container flex items-center justify-between rounded-2xl px-4 py-2 pb-3 bg-white/20 backdrop-blur-lg fixed top-0 left-1/2 transform -translate-x-1/2 z-50 border-b border-white/10 transition-all duration-300">
         {/* LEFT SIDE */}
         <div
@@ -95,7 +95,7 @@ const Header = ({ hovering, setHovering }) => {
             left: popoverLeft || 0,
             height: popoverHeight || 0,
           }}
-          className="flex items-center gap-[100px] "
+          className="flex items-center gap-[100px]"
         >
           {/* Logo and Title */}
           <div className="flex items-center gap-2 sm:gap-1">
@@ -105,84 +105,91 @@ const Header = ({ hovering, setHovering }) => {
               alt="logo_image"
             />
             <a href="#">
-              <p className="block md:block  lg:block text-sm sm:text-xs md:text-lg font-bold uppercase text-[#083473]">
+              <p className="block md:block lg:block text-sm sm:text-xs md:text-lg font-bold uppercase text-[#083473]">
                 World Translate Service
               </p>
             </a>
           </div>
-
         </div>
-          {/* Navigation Links */}
-          <div
-            onMouseLeave={() => setHovering(null)}
-            className="hidden  lg:flex items-center gap-2 relative p-2 mr-[460px] w-" 
-          >
-            {["Services", "Solutions", "Resources", "Company"].map(
-              (item, index) => (
-                <a
-                  key={index}
-                  onMouseEnter={(e) => handleMouseEnter(index, e)}
-                  href="#"
-                  className="flex items-center gap-1 bg-transparent hover:bg-gray-100 rounded-3xl py-2 px-3 text-gray-700 hover:text-black group"
-                >
-                  <span className="text-[15px] capitalize">{item}</span>
-                  <FaAngleDown
-                    className="size-[12px] transition-transform duration-400"
-                    style={{
-                      transform:
-                        hovering === index ? "rotate(180deg)" : "rotate(0deg)",
-                    }}
-                  />
-                </a>
-              )
-            )}
 
-            {hovering !== null && (
-              <div
-                style={{
-                  left: hovering === 0 || hovering === 1 ? "100%" : popoverLeft,
-                  transform:
-                    hovering === 0 || hovering === 1
-                      ? "translateX(-50%)"
-                      : "translateX(0)",
-                }}
-                className="absolute top-full  w-auto  rounded-xl shadow-2xl transition-all duration-300 overflow-hidden z-50  bg-white backdrop-blur-sm border-[1px] border-[rgba(225,223,217,1)] "
+        {/* Navigation Links */}
+        <div
+          onMouseLeave={() => setHovering(null)}
+          className="hidden lg:flex items-center gap-2 relative p-2 mr-[460px] w-"
+        >
+          {["Services", "Solutions", "Resources", "Company"].map(
+            (item, index) => (
+              <a
+                key={index}
+                onMouseEnter={(e) => handleMouseEnter(index, e)}
+                href="#"
+                className="flex items-center gap-1 bg-transparent hover:bg-gray-100 rounded-3xl py-2 px-3 text-gray-700 hover:text-black group"
               >
-                <div
-                  className={clsx(
-                    "transition-opacity duration-300 h-auto",
-                    hovering === 0 ? "opacity-100 " : "opacity-0 hidden"
-                  )}
-                >
-                  <Menu0 />
-                </div>
-                <div
-                  className={clsx(
-                    "transition-opacity duration-300",
-                    hovering === 1 ? "opacity-100" : "opacity-0 hidden"
-                  )}
-                >
-                  <Menu1 />
-                </div>
-                <div
-                  className={clsx(
-                    "transition-opacity duration-300",
-                    hovering === 2 ? "opacity-100" : "opacity-0 hidden"
-                  )}
-                >
-                  <Menu2 />
-                </div>
-                <div
-                  className={clsx(
-                    "transition-opacity duration-300",
-                    hovering === 3 ? "opacity-100" : "opacity-0 hidden"
-                  )}
-                >
-                  <Menu3 />
-                </div>
+                <span className="text-[15px] capitalize">{item}</span>
+                <FaAngleDown
+                  className="size-[12px] transition-transform duration-400"
+                  style={{
+                    transform:
+                      hovering === index ? "rotate(180deg)" : "rotate(0deg)",
+                  }}
+                />
+              </a>
+            )
+          )}
+
+          {hovering !== null && (
+            <div
+              style={{
+                left: hovering === 0 || hovering === 1 ? "100%" : popoverLeft,
+                transform:
+                  hovering === 0 || hovering === 1
+                    ? "translateX(-50%)"
+                    : "translateX(0)",
+              }}
+              className="absolute top-full w-auto rounded-xl shadow-2xl transition-all duration-300 overflow-hidden z-50 bg-white backdrop-blur-sm border-[1px] border-[rgba(225,223,217,1)]"
+            >
+              {/* Menu0 - Services */}
+              <div
+                className={clsx(
+                  "transition-opacity duration-300 h-auto",
+                  hovering === 0 ? "opacity-100" : "opacity-0 hidden"
+                )}
+              >
+                <Menu0 />
               </div>
-            )}
-          </div>
+              
+              {/* Menu1 - Solutions (will show "By language" by default) */}
+              <div
+                className={clsx(
+                  "transition-opacity duration-300",
+                  hovering === 1 ? "opacity-100" : "opacity-0 hidden"
+                )}
+              >
+                <Menu1 />
+              </div>
+              
+              {/* Menu2 - Resources */}
+              <div
+                className={clsx(
+                  "transition-opacity duration-300",
+                  hovering === 2 ? "opacity-100" : "opacity-0 hidden"
+                )}
+              >
+                <Menu2 />
+              </div>
+              
+              {/* Menu3 - Company */}
+              <div
+                className={clsx(
+                  "transition-opacity duration-300",
+                  hovering === 3 ? "opacity-100" : "opacity-0 hidden"
+                )}
+              >
+                <Menu3 />
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* HAMBURGER ICON */}
         <button
@@ -191,6 +198,7 @@ const Header = ({ hovering, setHovering }) => {
         >
           <GiHamburgerMenu className="text-2xl text-[#083473] block lg:hidden cursor-pointer" />
         </button>
+
         <div className="hidden lg:flex items-center gap-1">
           {/* language context */}
           <div className="relative" onMouseLeave={handleLanguageMouseLeave}>
@@ -210,7 +218,7 @@ const Header = ({ hovering, setHovering }) => {
             </button>
             {open && (
               <div
-                className="absolute top-full left-0 mt-2 rounded-xl bg-white  shadow-xl z-50 animate-fade-in-down"
+                className="absolute top-full left-0 mt-2 rounded-xl bg-white shadow-xl z-50 animate-fade-in-down"
                 onMouseEnter={handleLanguageMouseEnter}
                 onMouseLeave={handleLanguageMouseLeave}
               >
@@ -230,16 +238,17 @@ const Header = ({ hovering, setHovering }) => {
               </div>
             )}
           </div>
+          
           {/* order button */}
-          <div className="group overflow-hidden w-[120px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4   py-[9px] flex items-center gap-2">
+          <div className="group overflow-hidden w-[120px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4 py-[9px] flex items-center gap-2">
             <span className="text-white font-medium whitespace-nowrap">
               Order Now
             </span>
             <FaArrowRight className="text-white opacity-0 group-hover:opacity-100 -translate-x-[10px] group-hover:translate-x-0 transition-all duration-300" />
           </div>
         </div>
-        
-        {/* <==== modal content ====> */}
+
+        {/* MOBILE MENU MODAL */}
         {showMobileMenu && (
           <div className="w-full h-full">
             <div className="fixed inset-0 bg-white/50 backdrop-blur-md z-[9999] flex flex-col h-screen">
@@ -278,7 +287,7 @@ const Header = ({ hovering, setHovering }) => {
               {/* Conditional rendering of menu or screen */}
               <div className="container flex-1 overflow-y-auto bg-white pt-4">
                 {selectedMenuItem ? (
-                  // Display selected menu component
+                  // Display selected menu component (Menu1 will show "By language" by default)
                   <div className="p-4">
                     {React.createElement(selectedMenuItem.component)}
                   </div>
