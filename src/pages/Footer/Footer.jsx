@@ -30,8 +30,9 @@ const Footer = () => {
       </div>
 
       {/* Features grid */}
-      <div className="w-full max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+         {/* Features grid */}
+         <div className="w-full max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
           
           {/* Professional Quality */}
           <div className="p-4 lg:p-6 rounded-2xl bg-[rgba(31,31,30,1)] flex flex-col gap-4">
@@ -41,8 +42,8 @@ const Footer = () => {
               </div>
               <h3 className="text-white font-semibold text-base lg:text-lg">Professional Quality</h3>
             </div>
-            <p className="text-gray-300 text-sm lg:text-base leading-relaxed pl-[42px]">
-              Expert translators ensuring accuracy, consistency, and reliability
+            <p className="text-gray-300 text-xs lg:text-sm leading-tight pl-[42px]">
+              Expert translators ensuring accuracy and reliability
             </p>
           </div>
 
@@ -54,8 +55,8 @@ const Footer = () => {
               </div>
               <h3 className="text-white font-semibold text-base lg:text-lg">Speedy Turnarounds</h3>
             </div>
-            <p className="text-gray-300 text-sm lg:text-base leading-relaxed pl-[42px]">
-              Fast and efficient service, with same-day options for urgent orders
+            <p className="text-gray-300 text-xs lg:text-sm leading-tight pl-[42px]">
+              Fast service with same-day options available
             </p>
           </div>
 
@@ -67,8 +68,8 @@ const Footer = () => {
               </div>
               <h3 className="text-white font-semibold text-base lg:text-lg">Simple Pricing</h3>
             </div>
-            <p className="text-gray-300 text-sm lg:text-base leading-relaxed pl-[42px]">
-              Affordable translations with clear, upfront pricing and no hidden fees
+            <p className="text-gray-300 text-xs lg:text-sm leading-tight pl-[42px]">
+              Clear pricing with no hidden fees
             </p>
           </div>
 
@@ -80,16 +81,15 @@ const Footer = () => {
               </div>
               <h3 className="text-white font-semibold text-base lg:text-lg">Secure & Confidential</h3>
             </div>
-            <p className="text-gray-300 text-sm lg:text-base leading-relaxed pl-[42px]">
-              Your information stays private and protected with strict safeguards
+            <p className="text-gray-300 text-xs lg:text-sm leading-tight pl-[42px]">
+              Your information stays private and protected
             </p>
           </div>
 
         </div>
       </div>
-
       {/* Divider */}
-      <div className="w-full max-w-7xl mx-auto border-b border-gray-500 border-opacity-30"></div>
+      <div className="w-full max-w-7xl mx-auto border-b border-gray-500 border-opacity-30 m-5 md:m-[50px] lg:m-[100px]"></div>
 
       {/* Footer info links */}
       <div className="w-full max-w-7xl mx-auto">
@@ -125,11 +125,11 @@ const Footer = () => {
                 <div className="w-[35px] h-[35px] flex items-center justify-center text-lg flex-shrink-0 group-hover:scale-110 transition-transform"> 
                   <MdAddIcCall/>
                 </div>
-                <span className="text-sm md:text-base">+998 93 396 30 97</span>
+                <span className="text-sm md:text-base">+998 95 085 71 99</span>
               </a>
               
               <a 
-                href="https://t.me/Odiljon_3097" 
+                href="https://t.me/mbmbiznes" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center text-gray-200 hover:text-gray-100 transition-colors cursor-pointer group"
