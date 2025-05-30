@@ -35,21 +35,9 @@ export const Menu3 = forwardRef((props, ref) => {
       />
       <LinkCard
         href="#"
-        title="Customer Reviews"
-        description="See what our customers are saying"
-        Icon={TbStars}
-      />
-      <LinkCard
-        href="#"
         title="Translation Jobs"
         description="Apply to join our translation team"
         Icon={PiSuitcase}
-      />
-      <LinkCard
-        href="#"
-        title="Affiliates"
-        description="Earn commissions by referring customers"
-        Icon={TbAffiliate}
       />
       <LinkCard
         href="#"
