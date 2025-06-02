@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
-import { MdArrowBack} from "react-icons/md";
+import { MdArrowBack } from "react-icons/md";
 import { GoArrowRight } from "react-icons/go";
 
 import clsx from "clsx";
@@ -157,7 +157,7 @@ const Header = ({ hovering, setHovering }) => {
               >
                 <Menu0 />
               </div>
-              
+
               {/* Menu1 - Solutions (will show "By language" by default) */}
               <div
                 className={clsx(
@@ -167,7 +167,7 @@ const Header = ({ hovering, setHovering }) => {
               >
                 <Menu1 />
               </div>
-              
+
               {/* Menu2 - Resources */}
               <div
                 className={clsx(
@@ -177,7 +177,7 @@ const Header = ({ hovering, setHovering }) => {
               >
                 <Menu2 />
               </div>
-              
+
               {/* Menu3 - Company */}
               <div
                 className={clsx(
@@ -218,7 +218,7 @@ const Header = ({ hovering, setHovering }) => {
             </button>
             {open && (
               <div
-                className="absolute top-full left-0 mt-2 rounded-xl bg-white shadow-xl z-50 animate-fade-in-down"
+                className="absolute  top-full left-[8px] mt-2 rounded-xl bg-white shadow-xl z-50 animate-fade-in-down"
                 onMouseEnter={handleLanguageMouseEnter}
                 onMouseLeave={handleLanguageMouseLeave}
               >
@@ -227,7 +227,7 @@ const Header = ({ hovering, setHovering }) => {
                     key={lang.code}
                     onClick={() => changeLanguage(lang)}
                     className={clsx(
-                      "flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 transition w-full text-left border-[1px] border-gray-100 cursor-pointer",
+                      "flex rounded-2xl  gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 transition w-full text-left border-[1px] border-gray-100 cursor-pointer",
                       currentLanguage.code === lang.code && "bg-white"
                     )}
                   >
@@ -238,7 +238,7 @@ const Header = ({ hovering, setHovering }) => {
               </div>
             )}
           </div>
-          
+
           {/* order button */}
           <div className="group overflow-hidden w-[120px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4 py-[9px] flex items-center gap-2">
             <span className="text-white font-medium whitespace-nowrap">
