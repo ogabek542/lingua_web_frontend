@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import MainSection from "../MainSection/MainSection";
+import MainTop from "../../components/MainTopSection/MainTop";
 
 const Home = () => {
   const [hovering, setHovering] = useState(null);
