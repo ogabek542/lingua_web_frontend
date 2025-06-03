@@ -3,10 +3,14 @@ import logoBigImage from "../../assets/linguaPhoto.png";
 import { BiCertification } from "react-icons/bi";
 import { MdAddCall } from "react-icons/md";
 import MainTop from "../../components/MainTopSection/MainTop";
+import MiddleSection from "../../components/MiddleSectionComponent/MiddleSection";
+import TranslateBetweenSection from "../../components/TranslateBetween/TranslateBetweenSection";
+
 // import icon image //
 import FirstImage from "../../assets/bbb.webp";
 import SecondImage from "../../assets/uscis.webp";
 import ThirdImage from "../../assets/privacy.webp";
+import DocumentComponent from "../../components/DocumentComponent/DocumentComponent";
 
 const MainSection = () => {
   return (
@@ -16,13 +20,13 @@ const MainSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full h-auto p-4 sm:p-6">
         {/* First certification */}
         <div className="flex flex-row items-center gap-3 p-3 sm:p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
-          <BiCertification className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 flex-shrink-0" />
+          <BiCertification className="w-12 h-12 sm:w-13 sm:h-13 text-gray-400 flex-shrink-0" />
           <div className="flex-1 min-w-0">
             <p className="text-sm sm:text-base font-semibold text-gray-800 leading-tight">
-              Oʻzbekiston Respublikasi
+              Republic of Uzbekistan
             </p>
             <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
-              Adliya Vazirligi litsenziyasi
+              Ministry of Justice License
             </p>
           </div>
         </div>
@@ -32,14 +36,14 @@ const MainSection = () => {
           <img
             src={SecondImage}
             alt="ISO 9001 certification"
-            className="w-12 h-12 sm:w-16 sm:h-16 object-contain flex-shrink-0"
+            className="w-12 h-12 sm:w-12 sm:h-12 object-contain flex-shrink-0"
           />
           <div className="flex-1 min-w-0">
             <p className="text-sm sm:text-base font-semibold text-gray-800 leading-tight">
               ISO 9001:2015
             </p>
             <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
-              Sifat menejmenti sertifikatlangan
+              Quality management certified
             </p>
           </div>
         </div>
@@ -49,33 +53,34 @@ const MainSection = () => {
           <img
             src={ThirdImage}
             alt="Security certification"
-            className="w-12 h-12 sm:w-16 sm:h-16 object-contain flex-shrink-0"
+            className="w-12 h-12 sm:w-12 sm:h-12 object-contain flex-shrink-0"
           />
           <div className="flex-1 min-w-0">
             <p className="text-sm sm:text-base font-semibold text-gray-800 leading-tight">
-              Maxfiy va xavfsiz
+              Confidential and secure
             </p>
             <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
-              Maʼlumotlaringiz himoyalangan
+              Your data is protected.
             </p>
           </div>
         </div>
 
         {/* Fourth certification */}
         <div className="flex flex-row items-center gap-3 p-3 sm:p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
-          <MdAddCall className="w-12 h-12 sm:w-16 sm:h-16 object-contain flex-shrink-0 text-gray-600" />
+          <MdAddCall className="w-12 h-12 sm:w-12 sm:h-12 object-contain flex-shrink-0 text-gray-600" />
           <div className="flex-1 min-w-0">
             <p className="text-sm sm:text-base font-semibold text-gray-800 leading-tight">
-              24/7 Yordam
+              24/7 Support
             </p>
             <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
-              Doimiy texnik qo'llab-quvvatlash
+              Ongoing technical support
             </p>
           </div>
         </div>
       </div>
-
-      
+      <MiddleSection />
+      <TranslateBetweenSection />
+      <DocumentComponent />
     </div>
   );
 };
