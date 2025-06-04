@@ -12,6 +12,7 @@ import FirstImage from "../../assets/bbb.webp";
 import SecondImage from "../../assets/uscis.webp";
 import ThirdImage from "../../assets/privacy.webp";
 import DocumentComponent from "../../components/DocumentComponent/DocumentComponent";
+import SliderMain from "../../components/SliderMainComponent/SliderMain";
 
 const MainSection = () => {
   return (
@@ -83,6 +84,7 @@ const MainSection = () => {
       <TranslateBetweenSection />
       <DocumentComponent />
       <EveryCaseSection />
+      <SliderMain />
     </div>
   );
 };
