@@ -5,6 +5,7 @@ import { MdAddCall } from "react-icons/md";
 import MainTop from "../../components/MainTopSection/MainTop";
 import MiddleSection from "../../components/MiddleSectionComponent/MiddleSection";
 import TranslateBetweenSection from "../../components/TranslateBetween/TranslateBetweenSection";
+import EveryCaseSection from "../../components/EveryCaseSection/EveryCaseSection";
 
 // import icon image //
 import FirstImage from "../../assets/bbb.webp";
@@ -81,6 +82,7 @@ const MainSection = () => {
       <MiddleSection />
       <TranslateBetweenSection />
       <DocumentComponent />
+      <EveryCaseSection />
     </div>
   );
 };

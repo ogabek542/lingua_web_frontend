@@ -9,7 +9,7 @@ const SomeIconContent = ({
 }) => (
   <a
     href={linkAddress}
-    className="rounded-xl flex items-center gap-2 bg-white hover:bg-gray-100 p-2 transition-colors h-auto w-auto"
+    className="rounded-lg flex items-center gap-2 bg-white hover:bg-gray-100 p-2 transition-[background-color,margin] duration-200 ease-linear h-auto w-auto hover:mb-2"
   >
     <div
       className="w-[30px] h-[30px] rounded-md flex items-center justify-center"
