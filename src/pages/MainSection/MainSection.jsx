@@ -13,6 +13,7 @@ import SecondImage from "../../assets/uscis.webp";
 import ThirdImage from "../../assets/privacy.webp";
 import DocumentComponent from "../../components/DocumentComponent/DocumentComponent";
 import SliderMain from "../../components/SliderMainComponent/SliderMain";
+import MainSectionAccordion from "../../components/AccordionSection/MainSectionAccordion";
 
 const MainSection = () => {
   return (
@@ -85,6 +86,7 @@ const MainSection = () => {
       <DocumentComponent />
       <EveryCaseSection />
       <SliderMain />
+      <MainSectionAccordion />
     </div>
   );
 };
