@@ -1,8 +1,10 @@
 import React from "react";
 import { PiCheckCircleFill } from "react-icons/pi";
 import WorlImage from "../../assets/image_world.jpg";
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 
 const MiddleSection = () => {
+  const naviagte = useNavigate();
   return (
     <div className="container flex flex-col items-center justify-center gap-6 md:gap-8 lg:gap-10 py-6 md:py-10 px-4">
       <p className="w-full max-w-3xl text-center text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
@@ -25,11 +27,14 @@ const MiddleSection = () => {
             Word-for-word document translation with certification letter for
             official use.
           </p>
-          <a href="#">
-            <button className="bg-white text-gray-600 rounded-full px-4 py-2 md:py-3 font-semibold text-sm md:text-base lg:text-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-0.5 cursor-pointer">
+          <div>
+            <button
+              onClick={() => naviagte("/order")}
+              className="bg-white text-gray-600 rounded-full px-4 py-2 md:py-3 font-semibold text-sm md:text-base lg:text-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-0.5 cursor-pointer"
+            >
               Start Your Order
             </button>
-          </a>
+          </div>
 
           <div className="border-b border-white/20 my-4"></div>
 
@@ -64,11 +69,14 @@ const MiddleSection = () => {
             Interpretive document translation delivered in an editable format
             for business or personal use.
           </p>
-          <a href="#">
-            <button className="bg-white text-gray-600 rounded-full px-4 py-2 md:py-3 font-semibold text-sm md:text-base lg:text-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-0.5 cursor-pointer">
+          <div>
+            <button
+              onClick={() => naviagte("/order")}
+              className="bg-white text-gray-600 rounded-full px-4 py-2 md:py-3 font-semibold text-sm md:text-base lg:text-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-0.5 cursor-pointer"
+            >
               Start Your Order
             </button>
-          </a>
+          </div>
 
           <div className="border-b border-white/20 my-4"></div>
 

@@ -1,7 +1,9 @@
 import React from "react";
 import MainRightImage from "../../assets/home-heading_header.webp";
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 
 const MainTop = () => {
+  const naviagte = useNavigate();
   return (
     <div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 w-full h-auto p-4 sm:p-6 md:p-8 lg:px-14 xl:px-16 ">
       {/* left side */}
@@ -25,7 +27,10 @@ const MainTop = () => {
           delivered within 24 hours, ensuring a fast and hassle-free process.
         </p>
         <div className="flex items-start w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3">
-          <button className="capitalize bg-[#083473] hover:bg-[#062b5e] active:bg-[#051f47] text-white rounded-full px-2 py-2 sm:px-5 sm:py-3 md:px-6 md:py-4 w-full font-semibold text-base sm:text-lg transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+          <button
+            onClick={() => naviagte("/order")}
+            className="capitalize bg-[#083473] hover:bg-[#062b5e] active:bg-[#051f47] text-white rounded-full px-2 py-2 sm:px-5 sm:py-3 md:px-6 md:py-4 w-full font-semibold text-base sm:text-lg transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          >
             Start Your Order
           </button>
         </div>

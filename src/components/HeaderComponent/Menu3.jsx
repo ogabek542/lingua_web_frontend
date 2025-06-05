@@ -6,8 +6,10 @@ import { TbStars, TbAffiliate } from "react-icons/tb";
 import { PiSuitcase } from "react-icons/pi";
 import { LuHeartHandshake } from "react-icons/lu";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 
 export const Menu3 = forwardRef((props, ref) => {
+  const naviagte = useNavigate();
   return (
     <section
       ref={ref}
