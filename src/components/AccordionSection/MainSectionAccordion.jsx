@@ -60,7 +60,7 @@ const MainSectionAccordion = () => {
           >
             <button
               onClick={() => toggleAccordion(index)}
-              className="flex items-center justify-between px-4 py-3 text-left"
+              className="flex items-center justify-between px-4 py-3 text-left cursor-pointer"
             >
               <p className="font-medium text-base">{item.question}</p>
               {openIndex === index ? <FaAngleUp /> : <FaAngleDown />}

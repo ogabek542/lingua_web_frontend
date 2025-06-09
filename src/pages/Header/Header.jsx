@@ -4,9 +4,9 @@ import { FaAngleDown } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
-import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
 import { GoArrowRight } from "react-icons/go";
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 
 import clsx from "clsx";
 import { Menu0 } from "../../components/HeaderComponent/Menu0";
@@ -41,8 +41,8 @@ const Header = ({ hovering, setHovering }) => {
   const [popoverHeight, setPopoverHeight] = useState(0);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
+  const naviagte = useNavigate();
 
-  const navigate = useNavigate();
   const location = useLocation();
 
   const handleMouseEnter = (index, event) => {
@@ -240,12 +240,15 @@ const Header = ({ hovering, setHovering }) => {
           </div>
 
           {/* order button */}
-          <div className="group overflow-hidden w-[120px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4 py-[9px] flex items-center gap-2">
+          <button
+            onClick={() => naviagte("/order")}
+            className="group overflow-hidden w-[120px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4 py-[9px] flex items-center gap-2"
+          >
             <span className="text-white font-medium whitespace-nowrap">
               Order Now
             </span>
             <FaArrowRight className="text-white opacity-0 group-hover:opacity-100 -translate-x-[10px] group-hover:translate-x-0 transition-all duration-300" />
-          </div>
+          </button>
         </div>
 
         {/* MOBILE MENU MODAL */}
