@@ -25,14 +25,6 @@ const LANGUAGES = [
   { code: "ru", name: "Русский", icon: RusIcon },
 ];
 
-// Define menuItems that was missing
-const menuItems = [
-  { name: "Services", path: "services", component: Menu0 },
-  { name: "Solutions", path: "solutions", component: Menu1 }, // This will show "By language" by default
-  { name: "Resources", path: "resources", component: Menu2 },
-  { name: "Company", path: "company", component: Menu3 },
-];
-
 const Header = ({ hovering, setHovering }) => {
   const refs = useRef([]);
   const timeoutRef = useRef();
@@ -52,6 +44,14 @@ const Header = ({ hovering, setHovering }) => {
     setCurrentLanguage(langObj);
     setOpen(false);
   };
+
+  // Define menuItems that was missing
+  const menuItems = [
+    { name: t("services"), path: "services", component: Menu0 },
+    { name: t("solutions"), path: "solutions", component: Menu1 },
+    { name: t("resources"), path: "resources", component: Menu2 },
+    { name: t("company"), path: "company", component: Menu3 },
+  ];
 
   const handleMouseEnter = (index, event) => {
     setHovering(index);
@@ -118,7 +118,7 @@ const Header = ({ hovering, setHovering }) => {
           onMouseLeave={() => setHovering(null)}
           className="hidden lg:flex items-center gap-2 relative p-2 mr-[460px] w-"
         >
-          {["Services", "Solutions", "Resources", "Company"].map(
+          {[t("services"), t("solutions"), t("resources"), t("company")].map(
             (item, index) => (
               <a
                 key={index}
