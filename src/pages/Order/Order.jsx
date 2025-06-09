@@ -67,6 +67,9 @@ export default function Order() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
+  const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+  const CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+
   const options = [
     {
       id: "certified",
@@ -88,9 +91,6 @@ export default function Order() {
   };
 
   const handleSendOrder = async () => {
-    const TELEGRAM_BOT_TOKEN = "8005795345:AAHpA62G8TqQJ45AOhmiQSaFmXcvSqcCTWA";
-    const TELEGRAM_CHAT_ID = "6026141610";
-
     const message = `
 👤 <b>Name:</b> ${name}
 📞 <b>Phone:</b> ${phone}
@@ -99,18 +99,15 @@ export default function Order() {
 📄 <b>Document:</b> ${documentType}
 `;
 
-    await fetch(
-      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: message,
-          parse_mode: "HTML",
-        }),
-      }
-    );
+    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: message,
+        parse_mode: "HTML",
+      }),
+    });
 
     alert("Order sent!");
   };
