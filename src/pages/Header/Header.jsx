@@ -7,6 +7,7 @@ import { MdClose } from "react-icons/md";
 import { MdArrowBack } from "react-icons/md";
 import { GoArrowRight } from "react-icons/go";
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import clsx from "clsx";
 import { Menu0 } from "../../components/HeaderComponent/Menu0";
@@ -19,9 +20,9 @@ import RusIcon from "../../assets/svg/russian.svg";
 import EngIcon from "../../assets/svg/british.svg";
 
 const LANGUAGES = [
+  { code: "en", name: "English", icon: EngIcon },
   { code: "uz", name: "Uzbek", icon: UzbIcon },
   { code: "ru", name: "Русский", icon: RusIcon },
-  { code: "en", name: "English", icon: EngIcon },
 ];
 
 // Define menuItems that was missing
@@ -42,8 +43,15 @@ const Header = ({ hovering, setHovering }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
   const naviagte = useNavigate();
+  const { t, i18n } = useTranslation();
 
   const location = useLocation();
+
+  const changeLanguage = (langObj) => {
+    i18n.changeLanguage(langObj.code);
+    setCurrentLanguage(langObj);
+    setOpen(false);
+  };
 
   const handleMouseEnter = (index, event) => {
     setHovering(index);
@@ -64,13 +72,6 @@ const Header = ({ hovering, setHovering }) => {
 
   const handleLanguageMouseLeave = () => {
     timeoutRef.current = setTimeout(() => setOpen(false), 150);
-  };
-
-  const changeLanguage = (lang) => {
-    setCurrentLanguage(lang);
-    setOpen(false);
-    // Replace this with your actual i18n logic
-    alert(`Language changed to ${lang.name}`);
   };
 
   const handleMenuItemClick = (item) => {
@@ -106,7 +107,7 @@ const Header = ({ hovering, setHovering }) => {
             />
             <a href="#">
               <p className="block md:block lg:block text-sm sm:text-xs md:text-lg font-bold uppercase text-[#083473]">
-                World Translate Service
+                {t("site_name")}
               </p>
             </a>
           </div>
@@ -242,10 +243,10 @@ const Header = ({ hovering, setHovering }) => {
           {/* order button */}
           <button
             onClick={() => naviagte("/order")}
-            className="group overflow-hidden w-[120px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4 py-[9px] flex items-center gap-2"
+            className="group overflow-hidden max-w-[150px] hover:w-[140px] transition-all duration-300 rounded-3xl bg-[#083473] hover:bg-[#083450] cursor-pointer px-4 py-[9px] flex items-center gap-2"
           >
             <span className="text-white font-medium whitespace-nowrap">
-              Order Now
+              {t("order_now")}
             </span>
             <FaArrowRight className="text-white opacity-0 group-hover:opacity-100 -translate-x-[10px] group-hover:translate-x-0 transition-all duration-300" />
           </button>
@@ -274,7 +275,7 @@ const Header = ({ hovering, setHovering }) => {
                   <div className="flex items-center gap-2">
                     <img className="w-9 h-9" src={LinguaPhoto} alt="Logo" />
                     <span className="text-lg font-bold uppercase text-[#083473]">
-                      World Translate Service
+                      {t("site_name")}
                     </span>
                   </div>
                 )}
@@ -313,7 +314,7 @@ const Header = ({ hovering, setHovering }) => {
 
               <div className="p-6 bg-white shadow-sm">
                 <button className="bg-[#083473] hover:bg-[#062b5e] text-white rounded-full px-6 py-2 w-full font-semibold text-lg transition">
-                  Order Now
+                  {t("order_now")}
                 </button>
               </div>
             </div>

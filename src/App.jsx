@@ -7,6 +7,7 @@ import { Menu2 } from "./components/HeaderComponent/Menu2";
 import { Menu3 } from "./components/HeaderComponent/Menu3";
 import ModalDefaultScreen from "./pages/ModalScreens/ModalDefaultScreen";
 import Order from "./pages/Order/Order";
+import "./i18n/i18n";
 
 function App() {
   const [count, setCount] = useState(0);
