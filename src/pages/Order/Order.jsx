@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FiRefreshCw } from "react-icons/fi";
 import LinguaPhoto from "../../assets/linguaPhoto.png";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 const LANGUAGES = [
   "English",
@@ -28,38 +29,39 @@ const LANGUAGES = [
   "Indian",
 ];
 
-const DOCUMENT_TYPES = [
-  "Affidavit",
-  "Marriage Certificate",
-  "Divorce Decree",
-  "Death Certificate",
-  "Power of Attorney",
-  "Passport",
-  "Driver's License",
-  "National ID",
-  "Visa",
-  "Bank Statement",
-  "Tax Returns",
-  "Pay Stubs",
-  "Loan Agreement",
-  "Academic Transcripts",
-  "Diploma",
-  "Degree Certificate",
-  "Scholarship Letter",
-  "Medical Records",
-  "Vaccination Record",
-  "Prescription",
-  "Insurance Card",
-  "Employment Contract",
-  "Resume",
-  "Business License",
-  "Invoice",
-  "Email",
-  "Book",
-  "Others...",
-];
-
 export default function Order() {
+  const { t, i18n } = useTranslation();
+
+  const DOCUMENT_TYPES = [
+    t("affidavit"),
+    t("marriage_certificate"),
+    t("divorce_decree"),
+    t("death_certificate"),
+    t("power_of_attorney"),
+    t("passport"),
+    t("drivers_license"),
+    t("national_id"),
+    t("visa"),
+    t("bank_statement"),
+    t("tax_returns"),
+    t("pay_stubs"),
+    t("loan_agreement"),
+    t("academic_transcripts"),
+    t("diploma"),
+    t("degree_certificate"),
+    t("scholarship_letter"),
+    t("medical_records"),
+    t("vaccination_record"),
+    t("prescription"),
+    t("insurance_card"),
+    t("employment_contract"),
+    t("resume"),
+    t("business_license"),
+    t("invoice"),
+    t("email"),
+    t("book"),
+    t("others"),
+  ];
   const [translationType, setTranslationType] = useState("certified");
   const [fromLang, setFromLang] = useState("English");
   const [toLang, setToLang] = useState("Uzbek");
@@ -92,11 +94,11 @@ export default function Order() {
 
   const handleSendOrder = async () => {
     const message = `
-👤 <b>Name:</b> ${name}
-📞 <b>Phone:</b> ${phone}
-🔤 <b>Type:</b> ${translationType}
-🌐 <b>From → To:</b> ${fromLang} → ${toLang}
-📄 <b>Document:</b> ${documentType}
+👤 <b>${t("name_text")}:</b> ${name}
+📞 <b>${t("phonr_number_text")}:</b> ${phone}
+🔤 <b>${t("type_text")}:</b> ${translationType}
+🌐 <b>${t("from_text")} → ${t("to_text")}:</b> ${fromLang} → ${toLang}
+📄 <b>${t("document_text")}:</b> ${documentType}
 `;
 
     await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
