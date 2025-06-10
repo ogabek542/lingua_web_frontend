@@ -7,16 +7,20 @@ import LinguaPhoto from "../../assets/linguaPhoto.png";
 import { BiLogoTelegram } from "react-icons/bi";
 import { MdAddIcCall } from "react-icons/md";
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+const currentYear = new Date().getFullYear();
 
 const Footer = () => {
   const naviagte = useNavigate();
+  const { t, i18n } = useTranslation();
 
   return (
     <footer className="flex flex-col items-center justify-center w-full bg-[rgba(18,18,18,1)] rounded-tl-[40px] rounded-tr-[40px] md:rounded-tl-[60px] md:rounded-tr-[60px] lg:rounded-tl-[70px] lg:rounded-tr-[70px] h-auto gap-8 lg:gap-12 py-12 md:py-16 lg:py-24 px-4 md:px-6 lg:px-8">
       {/* Header text of footer */}
       <div className="text-center max-w-4xl mx-auto">
         <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
-          Get your translation started today
+          {t("footer_header_text")}
         </h2>
       </div>
 
@@ -26,14 +30,14 @@ const Footer = () => {
           onClick={() => naviagte("/order")}
           className="w-full sm:w-auto min-w-[180px] p-3 px-6 border-[1px] rounded-full bg-[rgba(8,52,115,1)] cursor-pointer hover:bg-[#083f73] transition-colors duration-300"
         >
-          <p className="text-white font-medium">Start Your Order</p>
+          <p className="text-white font-medium">{t("start_order_text")}</p>
         </button>
 
         <button
           onClick={() => naviagte("/order")}
           className="w-full sm:w-auto min-w-[180px] p-3 px-6 border-[1px] border-gray-400 rounded-full cursor-pointer bg-[rgba(18,18,18,1)] hover:bg-[rgba(18,18,29,0.1)] hover:border-white transition-all duration-300"
         >
-          <p className="text-white font-medium">Get a Quote</p>
+          <p className="text-white font-medium">{t("get_quote")}</p>
         </button>
       </div>
 
@@ -48,11 +52,11 @@ const Footer = () => {
                 <TbFileCertificate className="text-lg text-white" />
               </div>
               <h3 className="text-white font-semibold text-base lg:text-lg">
-                Professional Quality
+                {t("professional_quality")}
               </h3>
             </div>
             <p className="text-gray-300 text-xs lg:text-sm leading-tight pl-[42px]">
-              Expert translators ensuring accuracy and reliability
+              {t("expert_translator")}
             </p>
           </div>
 
@@ -63,11 +67,11 @@ const Footer = () => {
                 <RiMailSendFill className="text-lg text-white" />
               </div>
               <h3 className="text-white font-semibold text-base lg:text-lg">
-                Speedy Turnarounds
+                {t("speedy_turn")}
               </h3>
             </div>
             <p className="text-gray-300 text-xs lg:text-sm leading-tight pl-[42px]">
-              Fast service with same-day options available
+              {t("fast_service")}
             </p>
           </div>
 
@@ -78,11 +82,11 @@ const Footer = () => {
                 <RiMoneyDollarCircleLine className="text-lg text-white" />
               </div>
               <h3 className="text-white font-semibold text-base lg:text-lg">
-                Simple Pricing
+                {t("simple_price")}
               </h3>
             </div>
             <p className="text-gray-300 text-xs lg:text-sm leading-tight pl-[42px]">
-              Clear pricing with no hidden fees
+              {t("clear_pricing")}
             </p>
           </div>
 
@@ -93,11 +97,11 @@ const Footer = () => {
                 <BiSolidLockOpen className="text-lg text-white" />
               </div>
               <h3 className="text-white font-semibold text-base lg:text-lg">
-                Secure & Confidential
+                {t("secure_confidential")}
               </h3>
             </div>
             <p className="text-gray-300 text-xs lg:text-sm leading-tight pl-[42px]">
-              Your information stays private and protected
+              {t("your_information")}
             </p>
           </div>
         </div>
@@ -118,16 +122,16 @@ const Footer = () => {
                 alt="World Translate Service Logo"
               />
               <span className="text-xl md:text-2xl font-semibold text-gray-200 leading-tight">
-                World Translate Service
+                {t("site_name")}
               </span>
             </div>
 
             {/* Description */}
             <div className="text-gray-300 space-y-1">
               <div className="text-base lg:text-lg">
-                Speedy and reliable translation services.
+                {t("speedy_and_translation")}
               </div>
-              <div className="text-base lg:text-lg">Quality you can trust.</div>
+              <div className="text-base lg:text-lg">{t("quality_trust")}</div>
             </div>
 
             {/* Contact info */}
@@ -139,7 +143,9 @@ const Footer = () => {
                 <div className="w-[35px] h-[35px] flex items-center justify-center text-lg flex-shrink-0 group-hover:scale-110 transition-transform">
                   <MdAddIcCall />
                 </div>
-                <span className="text-sm md:text-base">+998 95 085 71 99</span>
+                <span className="text-sm md:text-base">
+                  {t("phone_number")}
+                </span>
               </a>
 
               <a
@@ -151,32 +157,34 @@ const Footer = () => {
                 <div className="w-[35px] h-[35px] flex items-center justify-center text-lg flex-shrink-0 group-hover:scale-110 transition-transform">
                   <BiLogoTelegram />
                 </div>
-                <span className="text-sm md:text-base">@Odiljon_3097</span>
+                <span className="text-sm md:text-base">
+                  {t("telegram_address")}
+                </span>
               </a>
             </div>
 
             {/* Legal links */}
             <div className="flex flex-wrap gap-2 text-sm md:text-base text-gray-300">
               <a href="#" className="hover:text-gray-100 transition-colors">
-                Terms
+                {t("terms")}
               </a>
               <span className="text-gray-500">|</span>
               <a href="#" className="hover:text-gray-100 transition-colors">
-                Refunds
+                {t("refunds")}
               </a>
               <span className="text-gray-500">|</span>
               <a href="#" className="hover:text-gray-100 transition-colors">
-                Privacy
+                {t("privacy")}
               </a>
               <span className="text-gray-500">|</span>
               <a href="#" className="hover:text-gray-100 transition-colors">
-                Security
+                {t("security_text")}
               </a>
             </div>
 
             {/* Copyright */}
             <div className="text-sm md:text-base text-gray-400">
-              © 2025 World Translate Service
+              © {currentYear} {t("site_name")}
             </div>
           </div>
 
@@ -186,7 +194,7 @@ const Footer = () => {
               {/* Services */}
               <div className="space-y-4">
                 <h4 className="text-lg font-semibold text-gray-200 mb-4">
-                  Services
+                  {t("services")}
                 </h4>
                 <ul className="space-y-2">
                   <li>
@@ -194,7 +202,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      Certified Translation
+                      {t("certified_translation")}
                     </a>
                   </li>
                   <li>
@@ -202,45 +210,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      Standard Translation
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
-                    >
-                      Pricing
-                    </a>
-                  </li>
-                </ul>
-
-                <h4 className="text-lg font-semibold text-gray-200 mt-6 mb-4">
-                  For Businesses
-                </h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="#"
-                      className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
-                    >
-                      Business Accounts
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
-                    >
-                      White Label Translation
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
-                    >
-                      Document Translation API
+                      {t("standart_translation")}
                     </a>
                   </li>
                 </ul>

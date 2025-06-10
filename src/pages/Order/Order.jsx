@@ -77,8 +77,8 @@ export default function Order() {
       desc: "Word-for-word document translation with a certification letter for official use.",
     },
     {
-      id: "uncertified",
-      title: "Uncertified Translation",
+      id: "standart",
+      title: "Standart Translation",
       desc: "Word-for-word document translation without a certification letter for personal use.",
     },
   ];
