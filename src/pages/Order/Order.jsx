@@ -4,31 +4,6 @@ import LinguaPhoto from "../../assets/linguaPhoto.png";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 
-const LANGUAGES = [
-  "English",
-  "Uzbek",
-  "Russian",
-  "Spanish",
-  "French",
-  "German",
-  "Chinese",
-  "Italian",
-  "Kazakh",
-  "Turkish",
-  "Azerbaijan",
-  "Arabic",
-  "Portuguese",
-  "Japanese",
-  "Afrikaans",
-  "Persian",
-  "Tajik",
-  "Krygiz",
-  "Turkmen",
-  "Korean",
-  "Belarus",
-  "Indian",
-];
-
 export default function Order() {
   const { t, i18n } = useTranslation();
 
@@ -62,6 +37,29 @@ export default function Order() {
     t("book"),
     t("others"),
   ];
+  const LANGUAGES = [
+    t("english_text"),
+    t("uzbek_text"),
+    t("russian_text"),
+    t("spanish_text"),
+    t("french_text"),
+    t("german_text"),
+    t("chinese_text"),
+    t("italian_text"),
+    t("kazakh_text"),
+    t("turkish_text"),
+    t("azerbaijan_text"),
+    t("arabic_text"),
+    t("portuguese_text"),
+    t("japanese_text"),
+    t("persian_text"),
+    t("tajik_text"),
+    t("krygiz_text"),
+    t("turkmen_text"),
+    t("korean_text"),
+    t("belarus_text"),
+    t("indian_text"),
+  ];
   const [translationType, setTranslationType] = useState("certified");
   const [fromLang, setFromLang] = useState("English");
   const [toLang, setToLang] = useState("Uzbek");
@@ -75,13 +73,13 @@ export default function Order() {
   const options = [
     {
       id: "certified",
-      title: "Certified Translation",
-      desc: "Word-for-word document translation with a certification letter for official use.",
+      title: t("certified_translation"),
+      desc: t("certifield_translation_description"),
     },
     {
       id: "standart",
-      title: "Standart Translation",
-      desc: "Word-for-word document translation without a certification letter for personal use.",
+      title: t("standart_translation"),
+      desc: t("standart_translation_description"),
     },
   ];
 
@@ -111,7 +109,7 @@ export default function Order() {
       }),
     });
 
-    alert("Order sent!");
+    alert(t("oder_succes_send_text"));
   };
 
   return (
@@ -130,7 +128,7 @@ export default function Order() {
                 href="/"
                 className="text-lg font-bold uppercase text-[#083473]"
               >
-                World Translate Service
+                {t("site_name")}
               </a>
             </div>
           </div>
@@ -138,17 +136,19 @@ export default function Order() {
           {/* right side */}
           <div className="rounded-xl w-full lg:w-1/2 flex flex-col p-5 gap-4">
             <p className="font-semibold text-2xl">
-              Start your translation order
+              {t("start_translation_order")}
             </p>
 
             {/* Translation Type */}
             <div>
-              <p className="text-xl">Translation type</p>
+              <p className="text-xl">{t("translation_type_text")}</p>
               <p className="text-gray-400 mb-2">
-                Choose the kind of translation you need to get started.
+                {t("choose_kind_of_translation")}
               </p>
               <fieldset className="space-y-3">
-                <legend className="sr-only">Choose translation type</legend>
+                <legend className="sr-only">
+                  {t("choose_translation_type")}
+                </legend>
                 <div className="flex flex-col sm:flex-row gap-3">
                   {options.map(({ id, title, desc }) => (
                     <label
@@ -179,9 +179,9 @@ export default function Order() {
 
             {/* Language Selection */}
             <div>
-              <p className="text-xl">Select languages</p>
+              <p className="text-xl">{t("select_language_text")}</p>
               <p className="text-gray-400 mb-2">
-                Choose your source and target languages.
+                {t("choose_your_source_language")}
               </p>
               <div className="flex items-center gap-2">
                 <select
@@ -218,9 +218,9 @@ export default function Order() {
 
             {/* Document Selection */}
             <div>
-              <p className="text-xl">Select document type</p>
+              <p className="text-xl">{t("select_document_type")}</p>
               <p className="text-gray-400 mb-2">
-                Choose the type of document you’re translating.
+                {t("choose_type_of_document_translation")}
               </p>
               <select
                 value={documentType}
@@ -241,14 +241,14 @@ export default function Order() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Your Name"
+                placeholder={t("your_name_placeholder")}
                 className="border border-[#083473] rounded p-2 focus:border-[#083473]"
               />
               <input
                 type="number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="Phone Number"
+                placeholder={t("phone_number_placeholder")}
                 className="border border-[#083473] rounded p-2 focus:border-[#083473]"
               />
             </div>
@@ -258,9 +258,9 @@ export default function Order() {
               <button
                 type="button"
                 onClick={handleSendOrder}
-                className="bg-[#083473] hover:bg-[#062b5e] text-white rounded-full px-6 py-3 w-full font-semibold text-lg transition"
+                className="bg-[#083473] hover:bg-[#062b5e] text-white rounded-full px-6 py-3 w-full font-semibold text-lg transition uppercase"
               >
-                SEND ORDER
+                {t("send_order_text")}
               </button>
             </div>
           </div>

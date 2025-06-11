@@ -1,3 +1,5 @@
+import { startTransition } from "react";
+
 const en = {
   translation: {
     site_name: "World Translate Service",
@@ -28,6 +30,10 @@ const en = {
     security_text: "Security",
     certified_translation: "Certified Translation",
     standart_translation: "Standard Translation",
+    certifield_translation_description:
+      "Word-for-word document translation with a certification letter for official use.",
+    standart_translation_description:
+      "Interpretive document translation delivered in an editable format for business or personal use.",
     for_business: "For Businesses",
     business_accounts: "Business Accounts",
     // order screen text //
@@ -65,6 +71,41 @@ const en = {
     from_text: "From",
     to_text: "To",
     document_text: "Document",
+    start_translation_order: "Start your translation order",
+    choose_kind_of_translation:
+      "Choose the kind of translation you need to get started.",
+    translation_type_text: "Translation type",
+    choose_translation_type: "Choose translation type",
+    select_language_text: "Select languages",
+    choose_your_source_language: "Choose your source and target languages.",
+    select_document_type: "Select document type",
+    choose_type_of_document_translation:
+      " Choose the type of document you’re translating.",
+    send_order_text: " SEND ORDER",
+    english_text: "English",
+    uzbek_text: "Uzbek",
+    russian_text: "Russian",
+    spanish_text: "Spanish",
+    french_text: "French",
+    german_text: "German",
+    chinese_text: "Chinese",
+    italian_text: "Italian",
+    kazakh_text: "Kazakh",
+    turkish_text: "Turkish",
+    azerbaijan_text: "Azerbaijan",
+    arabic_text: "Arabic",
+    portuguese_text: "Portuguese",
+    japanese_text: "Japanese",
+    persian_text: "Persian",
+    tajik_text: "Tajik",
+    krygiz_text: "Krygiz",
+    turkmen_text: "Turkmen",
+    korean_text: "Korean",
+    belarus_text: "Belarus",
+    indian_text: "Indian",
+    oder_succes_send_text: "Order sent!",
+    phone_number_placeholder: "Phone Number",
+    your_name_placeholder: "Your Name",
   },
 };
 
