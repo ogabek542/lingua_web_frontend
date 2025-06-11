@@ -106,7 +106,31 @@ const en = {
     oder_succes_send_text: "Order sent!",
     phone_number_placeholder: "Phone Number",
     your_name_placeholder: "Your Name",
+    republicof_uzbekiston: "Republic of Uzbekistan",
+    ministry_licences: "Ministry of Justice License",
+    iso_standart: "ISO 9001:2015",
+    quality_management: "Quality management certified",
+    confidential_secure: "Confidential and secure",
+    your_data_protected: "Your data is protected.",
+    support_day: "24/7 Support",
+    ongoing_technical_support: "Ongoing technical support",
+    online_translation_service_text: "Online translation services",
+    you_can_count_text: "you can count on.",
+    get_your_documents_description:
+      "Get your documents translated and certified by a professional translator in 15+ languages. Our high-quality translations are delivered within 24 hours, ensuring a fast and hassle-free process.",
+    hight_quality_translations_text:
+      "High-quality translations. Fast, reliable results.",
+    premium_offer_text:
+      "  We offer two premium translation services designed for avariety of industries, use cases, and document types. Our team of native-speaking professional translators delivers precise, reliable translations in 15+ languages.",
   },
+  delivered_as_signed: "Delivered as a signed, stamped PDF",
+  included_unlimited_revisions_text:
+    "Includes unlimited revisions and formatting",
+  expedited_service_notarisation_text:
+    "Expedited service, notarization, apostille & hard copy available",
+  delivered_docx_text: "Delivered in DOCX format",
+  expedited_service_available:
+    "Expedited service & desktop publishing available",
 };
 
 export default en;

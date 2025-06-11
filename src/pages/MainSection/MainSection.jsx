@@ -6,6 +6,7 @@ import MainTop from "../../components/MainTopSection/MainTop";
 import MiddleSection from "../../components/MiddleSectionComponent/MiddleSection";
 import TranslateBetweenSection from "../../components/TranslateBetween/TranslateBetweenSection";
 import EveryCaseSection from "../../components/EveryCaseSection/EveryCaseSection";
+import { useTranslation } from "react-i18next";
 
 // import icon image //
 import FirstImage from "../../assets/bbb.webp";
@@ -16,6 +17,8 @@ import SliderMain from "../../components/SliderMainComponent/SliderMain";
 import MainSectionAccordion from "../../components/AccordionSection/MainSectionAccordion";
 
 const MainSection = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="container flex flex-col items-center  w-full   h-auto    ">
       <MainTop />
@@ -26,10 +29,10 @@ const MainSection = () => {
           <BiCertification className="w-12 h-12 sm:w-13 sm:h-13 text-gray-400 flex-shrink-0" />
           <div className="flex-1 min-w-0">
             <p className="text-sm sm:text-base font-semibold text-gray-800 leading-tight">
-              Republic of Uzbekistan
+              {t("republicof_uzbekiston")}
             </p>
             <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
-              Ministry of Justice License
+              {t("ministry_licences")}
             </p>
           </div>
         </div>
@@ -43,10 +46,10 @@ const MainSection = () => {
           />
           <div className="flex-1 min-w-0">
             <p className="text-sm sm:text-base font-semibold text-gray-800 leading-tight">
-              ISO 9001:2015
+              {t("iso_standart")}
             </p>
             <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
-              Quality management certified
+              {t("quality_management")}
             </p>
           </div>
         </div>
@@ -60,10 +63,10 @@ const MainSection = () => {
           />
           <div className="flex-1 min-w-0">
             <p className="text-sm sm:text-base font-semibold text-gray-800 leading-tight">
-              Confidential and secure
+              {t("confidential_secure")}
             </p>
             <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
-              Your data is protected.
+              {t("your_data_protected")}
             </p>
           </div>
         </div>
@@ -73,10 +76,10 @@ const MainSection = () => {
           <MdAddCall className="w-12 h-12 sm:w-12 sm:h-12 object-contain flex-shrink-0 text-gray-600" />
           <div className="flex-1 min-w-0">
             <p className="text-sm sm:text-base font-semibold text-gray-800 leading-tight">
-              24/7 Support
+              {t("support_day")}
             </p>
             <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
-              Ongoing technical support
+              {t("ongoing_technical_support")}
             </p>
           </div>
         </div>
