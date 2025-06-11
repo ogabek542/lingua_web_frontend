@@ -2,8 +2,10 @@ import React from "react";
 import IconContent from "../IconContent/IconContent";
 import SomeIconContent from "../IconContent/SomeIconContent";
 import SomeDocumentsData from "./SomeDocumetsInfo";
+import { useTranslation } from "react-i18next";
 
 const DocumentComponent = () => {
+  const { t } = useTranslation();
   return (
     <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full h-auto p-4 sm:p-6 items-center">
       {/* left side */}
@@ -15,7 +17,7 @@ const DocumentComponent = () => {
               iconbgColor={item.iconbgColor}
               iconColor={item.iconColor}
               Icon={item.IconName}
-              contentText={item.contentText}
+              contentText={t(item.contentText)}
               linkAddress={item.linkAddress}
             />
           ))}
@@ -24,13 +26,10 @@ const DocumentComponent = () => {
       {/* right side */}
       <div className="w-full  p-5 flex flex-col gap-5 h-auto">
         <h2 className="w-full max-w-3xl text-start text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
-          Translate any document with ease
+          {t("translate_any_document_text")}
         </h2>
         <p className="w-full max-w-2xl text-start text-sm md:text-base lg:text-lg text-gray-600">
-          Our translators have extensive experience across diverse industries
-          and use cases, ensuring every document is translated with precision
-          and attention to detail. We carefully match each project with the
-          right expert to ensure accuracy, clarity, and reliability.
+          {t("our_translators_extensive")}
         </p>
       </div>
     </div>

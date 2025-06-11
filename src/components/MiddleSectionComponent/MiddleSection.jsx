@@ -5,8 +5,8 @@ import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const MiddleSection = () => {
-  const naviagte = useNavigate();
-  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="container flex flex-col items-center justify-center gap-6 md:gap-8 lg:gap-10 py-6 md:py-10 px-4">
@@ -28,7 +28,7 @@ const MiddleSection = () => {
           </p>
           <div>
             <button
-              onClick={() => naviagte("/order")}
+              onClick={() => navigate("/order")}
               className="bg-white text-gray-600 rounded-full px-4 py-2 md:py-3 font-semibold text-sm md:text-base lg:text-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-0.5 cursor-pointer"
             >
               {t("start_order_text")}
@@ -69,7 +69,7 @@ const MiddleSection = () => {
           </p>
           <div>
             <button
-              onClick={() => naviagte("/order")}
+              onClick={() => navigate("/order")}
               className="bg-white text-gray-600 rounded-full px-4 py-2 md:py-3 font-semibold text-sm md:text-base lg:text-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-0.5 cursor-pointer"
             >
               {t("start_order_text")}

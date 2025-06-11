@@ -16,13 +16,14 @@ import { TbReceiptTax } from "react-icons/tb";
 import { IoMdBook } from "react-icons/io";
 import { GrContactInfo } from "react-icons/gr";
 import { MdOutlineVaccines } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const SomeDocumentsData = [
   {
     iconbgColor: "rgba(230,238,245,1)",
     iconColor: "rgba(53,116,184,1)",
     IconName: PiGraduationCapBold,
-    contentText: "Academic Transcripts",
+    contentText: "academic_transcripts",
     linkAddress: "#",
   },
 
@@ -30,7 +31,7 @@ const SomeDocumentsData = [
     iconbgColor: "rgba(230,238,245,1)",
     iconColor: "rgba(53,116,184,1)",
     IconName: TbGrave2,
-    contentText: "Death Certificate",
+    contentText: "death_certificate",
     linkAddress: "#",
   },
 
@@ -38,7 +39,7 @@ const SomeDocumentsData = [
     iconbgColor: "rgba(230,238,245,1)",
     iconColor: "rgba(53,116,184,1)",
     IconName: GiLovers,
-    contentText: "Marriage Certificate",
+    contentText: "marriage_certificate",
     linkAddress: "#",
   },
 
@@ -46,7 +47,7 @@ const SomeDocumentsData = [
     iconbgColor: "rgba(230,238,245,1)",
     iconColor: "rgba(53,116,184,1)",
     IconName: LiaSignatureSolid,
-    contentText: "Affidavit",
+    contentText: "affidavit",
     linkAddress: "#",
   },
 
@@ -54,7 +55,7 @@ const SomeDocumentsData = [
     iconbgColor: "rgba(230,238,245,1)",
     iconColor: "rgba(53,116,184,1)",
     IconName: PiGraduationCapBold,
-    contentText: "Diploma",
+    contentText: "diploma",
     linkAddress: "#",
   },
 
@@ -62,14 +63,14 @@ const SomeDocumentsData = [
     iconbgColor: "rgba(230,238,245,1)",
     iconColor: "rgba(53,116,184,1)",
     IconName: LiaBookMedicalSolid,
-    contentText: "Medical Records",
+    contentText: "medical_records",
     linkAddress: "#",
   },
   {
     iconbgColor: "rgba(230,238,245,1)",
     iconColor: "rgba(53,116,184,1)",
     IconName: BiCertification,
-    contentText: "Apostille",
+    contentText: "apostille_text",
     linkAddress: "#",
   },
 
@@ -77,14 +78,14 @@ const SomeDocumentsData = [
     iconbgColor: "rgba(230,238,245,1)",
     iconColor: "rgba(53,116,184,1)",
     IconName: BsHeartbreak,
-    contentText: "Divorce Documents",
+    contentText: "divorce_document",
     linkAddress: "#",
   },
   {
     iconbgColor: "rgba(230,238,245,1)",
     iconColor: "rgba(53,116,184,1)",
     IconName: TbEPassport,
-    contentText: "Passport",
+    contentText: "passport",
     linkAddress: "#",
   },
 
@@ -92,7 +93,7 @@ const SomeDocumentsData = [
     iconbgColor: "rgba(230,238,245,1)",
     iconColor: "rgba(53,116,184,1)",
     IconName: BsBank2,
-    contentText: "Bank Statement",
+    contentText: "bank_statement",
     linkAddress: "#",
   },
 ];

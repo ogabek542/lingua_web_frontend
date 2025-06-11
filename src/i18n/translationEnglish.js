@@ -40,12 +40,14 @@ const en = {
     affidavit: "Affidavit",
     marriage_certificate: "Marriage Certificate",
     divorce_decree: "Divorce Decree",
+    divorce_document: "Divorce Documents",
     death_certificate: "Death Certificate",
     power_of_attorney: "Power of Attorney",
     passport: "Passport",
     drivers_license: "Driver's License",
     national_id: "National ID",
     visa: "Visa",
+    apostille_text: "Apostille",
     bank_statement: "Bank Statement",
     tax_returns: "Tax Returns",
     pay_stubs: "Pay Stubs",
@@ -80,7 +82,7 @@ const en = {
     choose_your_source_language: "Choose your source and target languages.",
     select_document_type: "Select document type",
     choose_type_of_document_translation:
-      " Choose the type of document you’re translating.",
+      " Choose the type of document you're translating.",
     send_order_text: " SEND ORDER",
     english_text: "English",
     uzbek_text: "Uzbek",
@@ -121,16 +123,22 @@ const en = {
     hight_quality_translations_text:
       "High-quality translations. Fast, reliable results.",
     premium_offer_text:
-      "  We offer two premium translation services designed for avariety of industries, use cases, and document types. Our team of native-speaking professional translators delivers precise, reliable translations in 15+ languages.",
+      "We offer two premium translation services designed for avariety of industries, use cases, and document types. Our team of native-speaking professional translators delivers precise, reliable translations in 15+ languages.",
+    delivered_as_signed: "Delivered as a signed, stamped PDF",
+    included_unlimited_revisions_text:
+      "Includes unlimited revisions and formatting",
+    expedited_service_notarisation_text:
+      "Expedited service, notarization, apostille & hard copy available",
+    delivered_docx_text: "Delivered in DOCX format",
+    expedited_service_available:
+      "Expedited service & desktop publishing available",
+    translate_between_years: "Translate between 7+ languages",
+    out_team_defination:
+      "Our team of full-time professional translators is carefully vetted and regularly reviewed to maintain exceptional accuracy and consistency across all languages. We ensure every translation meets the highest standards for quality and reliability.",
+    translate_any_document_text: "Translate any document with ease",
+    our_translators_extensive:
+      "Our translators have extensive experience across diverse industries and use cases, ensuring every document is translated with precision and attention to detail. We carefully match each project with the right expert to ensure accuracy, clarity, and reliability.",
   },
-  delivered_as_signed: "Delivered as a signed, stamped PDF",
-  included_unlimited_revisions_text:
-    "Includes unlimited revisions and formatting",
-  expedited_service_notarisation_text:
-    "Expedited service, notarization, apostille & hard copy available",
-  delivered_docx_text: "Delivered in DOCX format",
-  expedited_service_available:
-    "Expedited service & desktop publishing available",
 };
 
 export default en;

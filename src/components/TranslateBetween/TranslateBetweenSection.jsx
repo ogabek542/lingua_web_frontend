@@ -8,17 +8,20 @@ import FrenchImage from "../../assets/svg/france.svg";
 import ChinaImage from "../../assets/svg/china.svg";
 import SpanishImage from "../../assets/svg/spain.svg";
 import JapanImage from "../../assets/svg/japan.svg";
+import { useTranslation } from "react-i18next";
 
 const TranslateBetweenSection = () => {
+  const { t } = useTranslation();
+
   const languages = [
-    { name: "English", flag: EnglishImage },
-    { name: "Spanish", flag: SpanishImage },
-    { name: "French", flag: FrenchImage },
-    { name: "German", flag: GermanImage },
-    { name: "Italian", flag: ItalianImage },
-    { name: "Japan", flag: JapanImage },
-    { name: "Russian", flag: RussianImage },
-    { name: "Chinese", flag: ChinaImage },
+    { name: t("english_text"), flag: EnglishImage },
+    { name: t("spanish_text"), flag: SpanishImage },
+    { name: t("french_text"), flag: FrenchImage },
+    { name: t("german_text"), flag: GermanImage },
+    { name: t("italian_text"), flag: ItalianImage },
+    { name: t("japanese_text"), flag: JapanImage },
+    { name: t("russian_text"), flag: RussianImage },
+    { name: t("chinese_text"), flag: ChinaImage },
   ];
 
   return (
@@ -26,13 +29,10 @@ const TranslateBetweenSection = () => {
       {/* left side */}
       <div className="w-full  p-5 flex flex-col gap-5 h-auto">
         <h2 className="w-full max-w-3xl text-start text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
-          Translate between 15+ languages
+          {t("translate_between_years")}
         </h2>
         <p className="w-full max-w-2xl text-start text-sm md:text-base lg:text-lg text-gray-600">
-          Our team of full-time professional translators is carefully vetted and
-          regularly reviewed to maintain exceptional accuracy and consistency
-          across all languages. We ensure every translation meets the highest
-          standards for quality and reliability.
+          {t("out_team_defination")}
         </p>
       </div>
 
