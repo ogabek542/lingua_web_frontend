@@ -153,6 +153,25 @@ const en = {
     deportation_defense: "Deportation Defense",
     citizenship_application: "Citizenship Application",
     employment_abroad: "Employment Abroad",
+    frequent_answers: "Frequently Asked Questions",
+    get_common_answers:
+      "Get answers to common questions about our translation services. Learn how our process works, pricing details, turnaround times, document acceptance, notarization options, and how to receive your completed translation.",
+    firts_question_of_accordion: "How does the translation process work?",
+    first_answer_of_accordion:
+      "Our translation process is simple and efficient, but understanding the steps in advance can be helpful. Here's a quick overview: upload your documents and place your order, we assign the best translator for your project, and you'll be notified when your translation is complete. If revisions are needed, you can request them. For a detailed breakdown, we recommend reviewing our Translation Process Guide before placing an order.",
+    second_question_of_accordion: "How much do translations cost?",
+    second_answer_of_accordion:
+      "Certified translations , with a page defined or less.  with a minimum . Additional services, such as proofreading and expedited turnaround, are available for an extra fee. For full details, visit our pricing page or get a quote to calculate your project cost.",
+    third_question_of_accordion:
+      "How long does it take to receive my translation?",
+    third_answer_of_accordion:
+      "Most 1-3 page documents (up to 750 words) are delivered digitally within 24 hours. For a precise estimate, request a quote. Our translations are completed by professional human translators, and turnaround times vary based on factors such as word count, language pair, translator availability, and document complexity. Expedited turnaround is available, reducing the standard time by approximately 50%. Learn more about translation turnaround times..",
+    fourth_question_of_accordion: "Do you offer notarized translations?",
+    fourth_answer_of_accordion:
+      "We offer notarization as an optional add-on for all certified translations at $19.95 per order. Each Certificate of Translation Accuracy in your order will be notarized by a representative of our company and a Kentucky Notary Public, including their signature, commission number, expiration date, and an official rubber ink stamp. This notarization is valid in all 50 states.",
+    fifth_question_of_accordion: "How do I receive my completed translation?",
+    fifth_answer_of_accordion:
+      "We'll notify you via email when your documents are translated and ready for your review. You can always access your order details, retrieve translated files, and request revisions from your order status page.",
   },
 };
 

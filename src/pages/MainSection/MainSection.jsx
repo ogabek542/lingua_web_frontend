@@ -17,7 +17,7 @@ import SliderMain from "../../components/SliderMainComponent/SliderMain";
 import MainSectionAccordion from "../../components/AccordionSection/MainSectionAccordion";
 
 const MainSection = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="container flex flex-col items-center  w-full   h-auto    ">
