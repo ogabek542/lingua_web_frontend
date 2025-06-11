@@ -7,6 +7,11 @@ const en = {
     solutions: "Solutions",
     resources: "Resources",
     company: "Company",
+    about_text: "About",
+    guaratnee_text: "Guarantee",
+    transaltion_job: "Translation Jobs",
+    contact_us_text: "Contact Us",
+    partnerships_text: "Partnerships",
     footer_header_text: "Get your translation started today",
     start_order_text: "Start Your Order",
     get_quote: "Get a Quote",
@@ -172,6 +177,15 @@ const en = {
     fifth_question_of_accordion: "How do I receive my completed translation?",
     fifth_answer_of_accordion:
       "We'll notify you via email when your documents are translated and ready for your review. You can always access your order details, retrieve translated files, and request revisions from your order status page.",
+    by_language: "By Language",
+    by_document: "By Document",
+    use_case: "By Use Case",
+    by_industry: "By Industry",
+    help_center: "Help Center",
+    refer_text: "Refer",
+    earn_text: "Earn",
+    api_docs_text: "API Docs",
+    order_kookup_text: "Order Lookup",
   },
 };
 

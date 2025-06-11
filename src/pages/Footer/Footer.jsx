@@ -219,7 +219,7 @@ const Footer = () => {
               {/* Solutions */}
               <div className="space-y-4">
                 <h4 className="text-lg font-semibold text-gray-200 mb-4">
-                  Solutions
+                  {t("solutions")}
                 </h4>
                 <ul className="space-y-2">
                   <li>
@@ -227,7 +227,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      By Language
+                      {t("by_language")}
                     </a>
                   </li>
                   <li>
@@ -235,7 +235,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      By Document
+                      {t("by_document")}
                     </a>
                   </li>
                   <li>
@@ -243,7 +243,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      By Use Case
+                      {t("use_case")}
                     </a>
                   </li>
                   <li>
@@ -251,13 +251,13 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      By Industry
+                      {t("by_industry")}
                     </a>
                   </li>
                 </ul>
 
                 <h4 className="text-lg font-semibold text-gray-200 mt-6 mb-4">
-                  Resources
+                  {t("resources")}
                 </h4>
                 <ul className="space-y-2">
                   <li>
@@ -265,7 +265,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      Help Center
+                      {t("help_center")}
                     </a>
                   </li>
                   <li>
@@ -273,7 +273,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      Refer &amp; Earn
+                      {t("refer_text")} &amp; {t("earn_text")}
                     </a>
                   </li>
                   <li>
@@ -281,7 +281,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      API Docs
+                      {t("api_docs_text")}
                     </a>
                   </li>
                   <li>
@@ -289,7 +289,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      Order Lookup
+                      {t("order_kookup_text")}
                     </a>
                   </li>
                 </ul>
@@ -298,7 +298,7 @@ const Footer = () => {
               {/* Company */}
               <div className="space-y-4 sm:col-span-2 lg:col-span-1">
                 <h4 className="text-lg font-semibold text-gray-200 mb-4">
-                  Company
+                  {t("company")}
                 </h4>
                 <ul className="space-y-2">
                   <li>
@@ -306,7 +306,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      About
+                      {t("about_text")}
                     </a>
                   </li>
                   <li>
@@ -314,7 +314,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      Contact Us
+                      {t("contact_us_text")}
                     </a>
                   </li>
                   <li>
@@ -322,7 +322,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      Translation Jobs
+                      {t("transaltion_job")}
                     </a>
                   </li>
                   <li>
@@ -330,7 +330,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      Partnerships
+                      {t("partnerships_text")}
                     </a>
                   </li>
                   <li>
@@ -338,7 +338,7 @@ const Footer = () => {
                       href="#"
                       className="text-sm md:text-base text-gray-300 hover:text-gray-100 transition-colors block py-1"
                     >
-                      Guarantee
+                      {t("guaratnee_text")}
                     </a>
                   </li>
                 </ul>
