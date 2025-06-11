@@ -11,29 +11,25 @@ import EducationIMage from "../../assets/sliderImages/educational-credential-eva
 import DeportationImage from "../../assets/sliderImages/deportation-defense.webp";
 import CitizenshipImage from "../../assets/sliderImages/citizenship-applications.webp";
 import EmploymentImage from "../../assets/sliderImages/employment-abroad.webp";
+import { useTranslation } from "react-i18next";
 
 const sliderItems = [
-  { img: UStranslate, text: "USCIS Translations" },
-  { img: VisaApplicationImage, text: "Visa Applications" },
-  { img: DriverLicenseImage, text: "Driver’s License" },
-  { img: MarriageAbroadImage, text: "Marriage Abroad" },
-  { img: AcademicResearchImage, text: "Academic Research" },
-  { img: UniversityImage, text: "University & College Admission" },
-  { img: EcfmgImage, text: "ECFMG Translations" },
-  { img: RealEstateImage, text: "Real Estate Transactions" },
-  {
-    img: EducationIMage,
-    text: "Educational Credential Evaluation",
-  },
-  {
-    img: DeportationImage,
-    text: "Deportation Defense",
-  },
-  { img: CitizenshipImage, text: "Citizenship Application" },
-  { img: EmploymentImage, text: "Employment Abroad" },
+  { img: UStranslate, textKey: "uscis_translations" },
+  { img: VisaApplicationImage, textKey: "visa_applications" },
+  { img: DriverLicenseImage, textKey: "drivers_license" },
+  { img: MarriageAbroadImage, textKey: "marriage_abroad" },
+  { img: AcademicResearchImage, textKey: "academic_research" },
+  { img: UniversityImage, textKey: "university_college_admission" },
+  { img: EcfmgImage, textKey: "ecfmg_translations" },
+  { img: RealEstateImage, textKey: "real_estate_transactions" },
+  { img: EducationIMage, textKey: "educational_credential_evaluation" },
+  { img: DeportationImage, textKey: "deportation_defense" },
+  { img: CitizenshipImage, textKey: "citizenship_application" },
+  { img: EmploymentImage, textKey: "employment_abroad" },
 ];
 
 const SliderMain = () => {
+  const { t } = useTranslation();
   return (
     <div className="w-full overflow-x-auto scroll-smooth">
       <div className="flex gap-4 px-4 py-2 snap-x snap-mandatory">
@@ -48,7 +44,7 @@ const SliderMain = () => {
               className="w-full h-auto object-container rounded-xl transform transition-transform duration-300 ease-in-out group-hover:scale-110"
             />
             <p className="absolute bottom-0 text-white font-semibold items-start p-2 backdrop-blur-md bg-black/20 border border-white/10 w-full rounded-b-xl overflow-hidden truncate whitespace-nowrap">
-              {item.text}
+              {t(item.textKey)}
             </p>
           </div>
         ))}

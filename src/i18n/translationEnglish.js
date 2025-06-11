@@ -138,6 +138,21 @@ const en = {
     translate_any_document_text: "Translate any document with ease",
     our_translators_extensive:
       "Our translators have extensive experience across diverse industries and use cases, ensuring every document is translated with precision and attention to detail. We carefully match each project with the right expert to ensure accuracy, clarity, and reliability.",
+    translation_service_every_case: "Translation services for every use case",
+    we_provide_accurate_document_text:
+      "We provide accurate, high-quality translations for a wide range of use cases, from personal documents to business and legal needs. Our efficient process ensures fast turnaround times without compromising accuracy.",
+    uscis_translations: "USCIS Translations",
+    visa_applications: "Visa Applications",
+    drivers_license: "Driver’s License",
+    marriage_abroad: "Marriage Abroad",
+    academic_research: "Academic Research",
+    university_college_admission: "University & College Admission",
+    ecfmg_translations: "ECFMG Translations",
+    real_estate_transactions: "Real Estate Transactions",
+    educational_credential_evaluation: "Educational Credential Evaluation",
+    deportation_defense: "Deportation Defense",
+    citizenship_application: "Citizenship Application",
+    employment_abroad: "Employment Abroad",
   },
 };
 
