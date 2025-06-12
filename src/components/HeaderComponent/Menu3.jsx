@@ -7,8 +7,10 @@ import { PiSuitcase } from "react-icons/pi";
 import { LuHeartHandshake } from "react-icons/lu";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Menu3 = forwardRef((props, ref) => {
+  const { t } = useTranslation();
   const naviagte = useNavigate();
   return (
     <section
@@ -25,32 +27,32 @@ export const Menu3 = forwardRef((props, ref) => {
     >
       <LinkCard
         href="#"
-        title="About"
-        description="Learn more about World Translate Service"
+        title={t("about_text")}
+        description={t("learn_more_website")}
         Icon={FaRegComment}
       />
       <LinkCard
         href="#"
-        title="Contact Us"
-        description="Reach out to our support team for help"
+        title={t("contact_us_text")}
+        description={t("reach_support_help")}
         Icon={MdOutlineEmail}
       />
       <LinkCard
         href="#"
-        title="Translation Jobs"
-        description="Apply to join our translation team"
+        title={t("transaltion_job")}
+        description={t("apply_join_team")}
         Icon={PiSuitcase}
       />
       <LinkCard
         href="#"
-        title="Partnerships"
-        description="Provide member discounts on translations"
+        title={t("partnerships_text")}
+        description={t("provide_member_discount")}
         Icon={LuHeartHandshake}
       />
       <LinkCard
         href="#"
-        title="Guarantee"
-        description="Guaranteed acceptance or your money back"
+        title={t("guaratnee_text")}
+        description={t("guarantee_acceptance")}
         Icon={AiOutlineSafetyCertificate}
       />
     </section>

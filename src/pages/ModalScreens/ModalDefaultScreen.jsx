@@ -3,21 +3,23 @@ import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { MdArrowBack, MdClose } from "react-icons/md";
 import { GoArrowRight } from "react-icons/go";
 import LinguaPhoto from "../../assets/linguaPhoto.png";
-
-const menuItems = [
-  { name: "Services", path: "services" },
-  { name: "Solutions", path: "solutions" },
-  { name: "Resources", path: "resources" },
-  { name: "Company", path: "company" },
-];
+import { useTranslation } from "react-i18next";
 
 const ModalDefaultScreen = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
 
+  const menuItems = [
+    { name: t("services"), path: "services" },
+    { name: t("solutions"), path: "solutions" },
+    { name: t("resources"), path: "resources" },
+    { name: t("company"), path: "company" },
+  ];
+
   const currentPath = location.pathname.split("/")[2]; // Fixed: should be index 2, not 1
   const currentMenu = menuItems.find((item) => item.path === currentPath);
-  
+
   return (
     <div className="fixed inset-0 bg-white/50 backdrop-blur-md z-[9999] flex flex-col h-screen">
       <div className="flex p-4 justify-between items-center bg-white border-b border-gray-300">
@@ -39,7 +41,7 @@ const ModalDefaultScreen = () => {
           <div className="flex items-center gap-2">
             <img className="w-9 h-9" src={LinguaPhoto} alt="Logo" />
             <span className="text-lg font-bold uppercase text-[#083473]">
-              World Translate Service
+              {t("site_name")}
             </span>
           </div>
         )}
@@ -76,7 +78,7 @@ const ModalDefaultScreen = () => {
 
       <div className="p-6 bg-white shadow-sm">
         <button className="bg-[#083473] hover:bg-[#062b5e] text-white rounded-full px-6 py-2 w-full font-semibold text-lg transition">
-          Order Now
+          {t("order_now")}
         </button>
       </div>
     </div>

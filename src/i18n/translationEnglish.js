@@ -219,6 +219,7 @@ const en = {
     by_industry: "By Industry",
     help_center: "Help Center",
     refer_text: "Refer",
+    refer_earn_text: "Refer & Earn",
     earn_text: "Earn",
     api_docs_text: "API Docs",
     order_kookup_text: "Order Lookup",
@@ -233,6 +234,14 @@ const en = {
     see_all_languages_text: "See all languages",
     document_simple_text: "Document",
     see_all_document: "See all documents",
+    answers_to_common_quest: "Answers to common questions and issues",
+    automate_and_management_scale: "Automate and manage translations at scale",
+    check_orders_details: "Check your order status and details",
+    learn_more_website: "Learn more about World Translate Service",
+    reach_support_help: "Reach out to our support team for help",
+    apply_join_team: "Apply to join our translation team",
+    provide_member_discount: "Provide member discounts on translations",
+    guarantee_acceptance: "Guaranteed acceptance or your money back",
   },
 };
 
