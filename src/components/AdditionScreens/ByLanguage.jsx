@@ -1,6 +1,7 @@
 // ByLanguage.jsx
 import React from "react";
 import LanguageCard from "../LanguageCard/LanguageCard";
+import { useTransition } from "react";
 
 import Azeri from "../../assets/svg/azeri.svg";
 import Kazak from "../../assets/svg/kazak.svg";
@@ -23,32 +24,55 @@ import China from "../../assets/svg/china.svg";
 import Italian from "../../assets/svg/italian.svg";
 import Persian from "../../assets/svg/persian.svg";
 import Indian from "../../assets/svg/indian.svg";
+import { useTranslation } from "react-i18next";
 
-const languages = [
-  { name: "Azerbaijan", icon: Azeri },
-  { name: "Kazakistan", icon: Kazak },
-  { name: "Kyrgizistan", icon: Kyrgiz },
-  { name: "Tadjikistan", icon: Tajik },
-  { name: "Russia", icon: Russian },
-  { name: "Ukrain", icon: Ukrain },
-  { name: "Belarus", icon: Belarus },
-  { name: "English", icon: British },
-  { name: "Turkish", icon: Turkish },
-  { name: "German", icon: German },
-  { name: "Korean", icon: Korean },
-  { name: "Japan", icon: Japan },
-  { name: "Poland", icon: Poland },
-  { name: "Arabic", icon: Arabic },
-  { name: "Uzbek", icon: Uzbek },
-  { name: "France", icon: France },
-  { name: "Spanish", icon: Spain },
-  { name: "China", icon: China },
-  { name: "Italian", icon: Italian },
-  { name: "Persian", icon: Persian },
-  { name: "Indian", icon: Indian },
-];
+// english_text: "English",
+//   uzbek_text: "Uzbek",
+//   russian_text: "Russian",
+//   spanish_text: "Spanish",
+//   french_text: "French",
+//   german_text: "German",
+//   chinese_text: "Chinese",
+//   italian_text: "Italian",
+//   kazakh_text: "Kazakh",
+//   turkish_text: "Turkish",
+//   azerbaijan_text: "Azerbaijan",
+//   arabic_text: "Arabic",
+//   portuguese_text: "Portuguese",
+//   japanese_text: "Japanese",
+//   persian_text: "Persian",
+//   tajik_text: "Tajik",
+//   krygiz_text: "Krygiz",
+//   turkmen_text: "Turkmen",
+//   korean_text: "Korean",
+//   belarus_text: "Belarus",
+//   indian_text: "Indian",
 
 const ByLanguage = () => {
+  const { t } = useTranslation();
+  const languages = [
+    { name: t("azerbaijan_text"), icon: Azeri },
+    { name: t("kazakh_text"), icon: Kazak },
+    { name: t("krygiz_text"), icon: Kyrgiz },
+    { name: t("tajik_text"), icon: Tajik },
+    { name: t("russian_text"), icon: Russian },
+    { name: t("ukrain_text"), icon: Ukrain },
+    { name: t("belarus_text"), icon: Belarus },
+    { name: t("english_text"), icon: British },
+    { name: t("turkish_text"), icon: Turkish },
+    { name: t("german_text"), icon: German },
+    { name: t("korean_text"), icon: Korean },
+    { name: t("japanese_text"), icon: Japan },
+    { name: t("poland_text"), icon: Poland },
+    { name: t("arabic_text"), icon: Arabic },
+    { name: t("uzbek_text"), icon: Uzbek },
+    { name: t("french_text"), icon: France },
+    { name: t("spanish_text"), icon: Spain },
+    { name: t("chinese_text"), icon: China },
+    { name: t("italian_text"), icon: Italian },
+    { name: t("persian_text"), icon: Persian },
+    { name: t("indian_text"), icon: Indian },
+  ];
   return (
     <div className="flex flex-col px-3 w-full h-full">
       {/* Header */}

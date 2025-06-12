@@ -110,6 +110,8 @@ const en = {
     korean_text: "Korean",
     belarus_text: "Belarus",
     indian_text: "Indian",
+    ukrain_text: "Ukrainian",
+    poland_text: "Poland",
     oder_succes_send_text: "Order sent!",
     phone_number_placeholder: "Phone Number",
     your_name_placeholder: "Your Name",
@@ -186,6 +188,14 @@ const en = {
     earn_text: "Earn",
     api_docs_text: "API Docs",
     order_kookup_text: "Order Lookup",
+    offer_best_translation_description: "Offer professional translation",
+    white_label_text_title: "White Label Translation",
+    offer_professional_translation:
+      "Offer professional translations under your brand",
+    document_translation_text: "Document Translation API",
+    sameless_translation_text: "Seamlessly add translation to your workflows",
+    content_not_avalible_text: "Content not available",
+    default_by_language: "Default: By language",
   },
 };
 
