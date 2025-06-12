@@ -1,12 +1,14 @@
 import React from 'react'
 import IconContent from '../IconContent/IconContent';
 import industrieScreensData from '../IndustryComponentData/IndustryScreenData';
+import { useTranslation } from 'react-i18next';
 
 
 
 
 
 const ByIndustry = () => {
+   const { t } = useTranslation();
   return (
     <div className='flex flex-col  px-3 h-auto  w-full' >
         {/* top contetn */}

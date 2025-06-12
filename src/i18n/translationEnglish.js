@@ -67,7 +67,10 @@ const en = {
     insurance_card: "Insurance Card",
     employment_contract: "Employment Contract",
     resume: "Resume",
+    brochure_text: "Brochure",
     business_license: "Business License",
+    birth_certificate: "Birth Certificate",
+    legal_contact_text: "Legal Contact",
     invoice: "Invoice",
     email: "Email",
     book: "Book",
@@ -84,6 +87,7 @@ const en = {
     translation_type_text: "Translation type",
     choose_translation_type: "Choose translation type",
     select_language_text: "Select languages",
+    language_header_text: "Language",
     choose_your_source_language: "Choose your source and target languages.",
     select_document_type: "Select document type",
     choose_type_of_document_translation:
@@ -196,6 +200,9 @@ const en = {
     sameless_translation_text: "Seamlessly add translation to your workflows",
     content_not_avalible_text: "Content not available",
     default_by_language: "Default: By language",
+    see_all_languages_text: "See all languages",
+    document_simple_text: "Document",
+    see_all_document: "See all documents",
   },
 };
 

@@ -20,141 +20,135 @@ import { ImCoinDollar } from "react-icons/im";
 import { MdOutlineMedicalServices } from "react-icons/md";
 import { TbAntenna } from "react-icons/tb";
 
+const industrieScreensData = [
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: LuBuilding2,
+    contentText: "Architecture",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: FaRegBuilding,
+    contentText: "Government",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: TbPill,
+    contentText: "Pharmaceuticals",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: PiSuitcaseSimpleLight,
+    contentText: "Business",
+    linkAddress: "#",
+  },
+  // new items
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: RiHealthBookLine,
+    contentText: "Healthcare",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: IoBookOutline,
+    contentText: "Publishing",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: TbBulldozer,
+    contentText: "Construction",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: PiCertificate,
+    contentText: "Immigiration",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: BsHouseCheck,
+    contentText: "Real Estate",
+    linkAddress: "#",
+  },
 
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: BsBoxSeam,
+    contentText: "E-commerce",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: GiInjustice,
+    contentText: "Legal",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: RiShoppingBasketLine,
+    contentText: "Retail",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: MdCastForEducation,
+    contentText: "Education",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: TbSpeakerphone,
+    contentText: "Marketing",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: FiCpu,
+    contentText: "Technology",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: ImCoinDollar,
+    contentText: "Financial",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: MdOutlineMedicalServices,
+    contentText: "Medicial",
+    linkAddress: "#",
+  },
+  {
+    iconbgColor: "rgba(250,240,220,1)",
+    iconColor: "rgba(204,157,71,1)",
+    IconName: TbAntenna,
+    contentText: "Telecommunication",
+    linkAddress: "#",
+  },
+];
 
-
-
-
-  const industrieScreensData = [
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: LuBuilding2,
-      contentText: "Architecture",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: FaRegBuilding ,
-      contentText: "Government",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: TbPill,
-      contentText: "Pharmaceuticals",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: PiSuitcaseSimpleLight,
-      contentText: "Business",
-      linkAddress: "#",
-    },
-    // new items
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: RiHealthBookLine ,
-      contentText: "Healthcare",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: IoBookOutline ,
-      contentText: "Publishing",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: TbBulldozer ,
-      contentText: "Construction",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: PiCertificate ,
-      contentText: "Immigiration",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: BsHouseCheck ,
-      contentText: "Real Estate",
-      linkAddress: "#",
-    },
- 
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: BsBoxSeam ,
-      contentText: "E-commerce",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: GiInjustice ,
-      contentText: "Legal",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: RiShoppingBasketLine ,
-      contentText: "Retail",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: MdCastForEducation ,
-      contentText: "Education",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: TbSpeakerphone ,
-      contentText: "Marketing",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: FiCpu ,
-      contentText: "Technology",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: ImCoinDollar ,
-      contentText: "Financial",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: MdOutlineMedicalServices ,
-      contentText: "Medicial",
-      linkAddress: "#",
-    },
-    {
-      iconbgColor: "rgba(250,240,220,1)",
-      iconColor: "rgba(204,157,71,1)",
-      IconName: TbAntenna ,
-      contentText: "Telecommunication",
-      linkAddress: "#",
-    },
-
-  ];
-
-  export default industrieScreensData;
+export default industrieScreensData;

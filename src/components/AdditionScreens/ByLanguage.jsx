@@ -26,28 +26,6 @@ import Persian from "../../assets/svg/persian.svg";
 import Indian from "../../assets/svg/indian.svg";
 import { useTranslation } from "react-i18next";
 
-// english_text: "English",
-//   uzbek_text: "Uzbek",
-//   russian_text: "Russian",
-//   spanish_text: "Spanish",
-//   french_text: "French",
-//   german_text: "German",
-//   chinese_text: "Chinese",
-//   italian_text: "Italian",
-//   kazakh_text: "Kazakh",
-//   turkish_text: "Turkish",
-//   azerbaijan_text: "Azerbaijan",
-//   arabic_text: "Arabic",
-//   portuguese_text: "Portuguese",
-//   japanese_text: "Japanese",
-//   persian_text: "Persian",
-//   tajik_text: "Tajik",
-//   krygiz_text: "Krygiz",
-//   turkmen_text: "Turkmen",
-//   korean_text: "Korean",
-//   belarus_text: "Belarus",
-//   indian_text: "Indian",
-
 const ByLanguage = () => {
   const { t } = useTranslation();
   const languages = [
@@ -76,7 +54,9 @@ const ByLanguage = () => {
   return (
     <div className="flex flex-col px-3 w-full h-full">
       {/* Header */}
-      <span className="text-md text-gray-500 my-2">Language</span>
+      <span className="text-md text-gray-500 my-2">
+        {t("language_header_text")}
+      </span>
 
       {/* Grid of Language Cards */}
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
@@ -89,7 +69,9 @@ const ByLanguage = () => {
       <div className="w-full border-t border-gray-200 my-4"></div>
 
       {/* Footer */}
-      <span className="text-md text-gray-500 mb-2">See all languages</span>
+      <span className="text-md text-gray-500 mb-2">
+        {t("see_all_languages_text")}
+      </span>
     </div>
   );
 };
